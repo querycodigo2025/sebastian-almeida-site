@@ -5,71 +5,55 @@ const galleryItems = [
     src: '/images/event-large.jpg',
     alt: 'Grande evento corporativo com público lotado',
     title: 'Query in Company',
-    subtitle: 'Neurociência Corporativa',
-    description: 'Transformação de culturas organizacionais e liderança executiva.'
+    subtitle: 'Neurociência que transforma culturas e líderes'
   },
   {
     src: '/images/audience-stage.jpg',
-    alt: 'Sebastian Almeida no palco diante de grande plateia',
+    alt: 'Plateia acompanhando Sebastian no palco',
     title: 'Estriado ao Vivo',
-    subtitle: 'Palco de Alto Impacto',
-    description: '"Estriado: Onde o Novo Vira Automático" - Reprogramação comportamental.'
+    subtitle: '"Estriado: Onde o Novo Vira Automático"'
   },
   {
     src: '/images/brain2.jpg',
-    alt: 'Sebastian Almeida explicando neurociência prática',
-    title: 'Neurociência Prática',
-    subtitle: 'Mapeamento Cerebral',
-    description: 'Desvendando onde mora cada emoção humana na tomada de decisão.'
+    alt: 'Sebastian explicando neurociência para o público',
+    title: 'Onde Mora Cada Emoção?',
+    subtitle: 'Neurociência Prática'
   },
   {
     src: '/images/workshop-audience.jpg',
-    alt: 'Plateia do workshop atenta à palestra',
+    alt: 'Plateia no workshop',
     title: 'Workshop Reconexão',
-    subtitle: 'Inteligência Emocional',
-    description: 'Vivências práticas voltadas para a cura e liberação de travas emocionais.'
+    subtitle: 'Workshop Reconexão Emocional'
   },
   {
     src: '/images/immersion.jpg',
-    alt: 'Participantes em vivência profunda nos tapetes roxos',
+    alt: 'Imersão emocional — participantes nos tapetes roxos',
     title: 'Águia de Fogo',
-    subtitle: 'Imersão de Renascimento',
-    description: 'Processo profundo de renascimento e superação de feridas emocionais antigas.'
-  },
-  {
-    src: '/images/audience-estriado.jpg',
-    alt: 'Público no treinamento Estriado acompanhando os slides',
-    title: 'Treinamento Estriado',
-    subtitle: 'Treinamento de Impacto',
-    description: 'Onde centenas de pessoas aprendem a ressignificar hábitos e crenças.'
-  },
-  {
-    src: '/images/stage-5etapas.jpg',
-    alt: 'Sebastian no palco explicando as 5 etapas da cura',
-    title: 'As 5 Etapas',
-    subtitle: 'Palco & Didática',
-    description: 'As cinco etapas fundamentais do Método Query para a cura emocional.'
-  },
-  {
-    src: '/images/stage-blue.jpg',
-    alt: 'Sebastian no palco sob iluminação azul cênica',
-    title: 'Palco Internacional',
-    subtitle: 'Presença e Liderança',
-    description: 'Mentorando e discursando para milhares de mentes ávidas por mudança.'
-  },
-  {
-    src: '/images/stage-book.jpg',
-    alt: 'Sebastian Almeida com seu livro no palco',
-    title: 'Lançamento de Livros',
-    subtitle: 'Escritor & Mentor',
-    description: 'Apresentação pública de obras literárias voltadas para a cicatrização emocional.'
+    subtitle: 'Imersão Águia de Fogo'
   },
   {
     src: '/images/workshop-group.jpg',
-    alt: 'Foto de grupo com participantes da mentoria',
+    alt: 'Foto em grupo após workshop',
     title: 'Mentoria em Grupo',
-    subtitle: 'Cicatrização Emocional',
-    description: 'Alunos reunidos celebrando o encerramento do ciclo de mentoria profunda.'
+    subtitle: 'Mentoria Cicatrização Emocional'
+  },
+  {
+    src: '/images/audience-estriado.jpg',
+    alt: 'Plateia no treinamento — Sebastian no palco',
+    title: 'Treinamento de Alto Impacto',
+    subtitle: 'Estriado ao Vivo'
+  },
+  {
+    src: '/images/stage-5etapas.jpg',
+    alt: 'Sebastian no palco — As 5 Etapas da Cura Emocional',
+    title: 'As 5 Etapas da Cura Emocional',
+    subtitle: 'Método Query'
+  },
+  {
+    src: '/images/stage-blue.jpg',
+    alt: 'Sebastian palestrando no palco com iluminação azul',
+    title: 'Palco Internacional',
+    subtitle: 'Liderança e Presença'
   }
 ]
 
@@ -116,66 +100,228 @@ export default function Gallery() {
 
   return (
     <section id="galeria" className="py-24 md:py-32 relative">
-      <div className="absolute inset-0 pointer-events-none bg-[#0D0D0D]" />
+      <div className="absolute inset-0 pointer-events-none bg-dark-2" />
 
       <div className="relative max-w-7xl mx-auto px-6">
-        
-        {/* Header Block */}
-        <div className="text-center mb-16">
+        {/* Header */}
+        <div className="text-center mb-14">
           <div className="flex items-center justify-center gap-4 mb-5">
             <div className="h-px w-12 bg-gold" />
-            <span className="text-gold text-xs uppercase tracking-[0.3em] font-semibold font-sans">Presença</span>
+            <span className="text-gold text-xs uppercase tracking-[0.3em] font-semibold">Presença</span>
             <div className="h-px w-12 bg-gold" />
           </div>
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
             Experiências que <span className="gold-text">Transformam</span>
           </h2>
-          <p className="text-white/65 max-w-2xl mx-auto text-base md:text-lg">
-            Treinamentos, workshops e imersões presenciais que já reuniram milhares de pessoas em busca de cura emocional genuína e autoliderança.
+          <p className="text-white/55 max-w-xl mx-auto">
+            Treinamentos, workshops e imersões que já reuniram milhares de pessoas em
+            busca de transformação emocional genuína.
           </p>
         </div>
 
-        {/* Premium Portrait Grid: Responsive aspect ratio cards showing 100% of images */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-          {galleryItems.map((item, index) => (
-            <div
-              key={item.src + index}
-              onClick={() => openLightbox(index)}
-              className="relative overflow-hidden rounded-sm aspect-[3/4] group cursor-pointer border border-white/5 shadow-lg transition-all duration-500 hover:border-gold/30"
-            >
-              {/* Image with zoom on hover */}
-              <img
-                src={item.src}
-                alt={item.alt}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                style={{ objectPosition: 'center 20%' }}
-                loading="lazy"
-              />
+        {/* 1. Hero event image — full width, tall (Preserving original layout exactly) */}
+        <div 
+          onClick={() => openLightbox(0)}
+          className="relative overflow-hidden rounded-sm mb-4 cursor-pointer group shadow-xl border border-white/5 transition-all duration-300 hover:border-gold/20" 
+          style={{ height: '420px' }}
+        >
+          <img
+            src="/images/event-large.jpg"
+            alt="Grande evento corporativo com público lotado"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+            style={{ objectPosition: 'center 35%' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-dark-DEFAULT/90 via-dark-DEFAULT/20 to-transparent" />
+          <div className="absolute bottom-6 left-8 right-8">
+            <p className="text-gold text-xs uppercase tracking-widest font-semibold mb-1">Query in Company</p>
+            <p className="font-serif text-2xl md:text-3xl text-white font-bold group-hover:text-gold transition-colors">
+              Neurociência que transforma culturas e líderes
+            </p>
+          </div>
+          
+          {/* Hover magnifier icon */}
+          <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-dark-DEFAULT/70 border border-white/10 flex items-center justify-center text-white/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            🔎
+          </div>
+        </div>
 
-              {/* Sophisticated gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-dark-DEFAULT/95 via-dark-DEFAULT/30 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300" />
-
-              {/* Text Card overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 flex flex-col justify-end">
-                <p className="text-gold text-[9px] uppercase tracking-widest font-semibold mb-1">
-                  {item.subtitle}
-                </p>
-                <h3 className="font-serif text-base font-bold text-white mb-1 group-hover:text-gold transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-white/50 text-[10px] line-clamp-2 leading-normal opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  {item.description}
-                </p>
-              </div>
-
-              {/* Hover indicator icon */}
-              <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-dark-DEFAULT/70 border border-white/10 flex items-center justify-center text-white/55 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </div>
+        {/* 2. Grid 3 columns (Preserving original asymmetrical layout exactly) */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
+          
+          {/* Audience stage — tall (2 rows span) */}
+          <div 
+            onClick={() => openLightbox(1)}
+            className="relative overflow-hidden rounded-sm row-span-2 cursor-pointer group shadow-lg border border-white/5 transition-all duration-300 hover:border-gold/20" 
+            style={{ height: '480px' }}
+          >
+            <img
+              src="/images/audience-stage.jpg"
+              alt="Plateia acompanhando Sebastian no palco"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+              style={{ objectPosition: 'center 20%' }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-dark-DEFAULT/90 via-dark-DEFAULT/20 to-transparent" />
+            <div className="absolute bottom-4 left-4 right-4">
+              <p className="text-gold text-xs uppercase tracking-widest font-semibold mb-1">Ao vivo</p>
+              <p className="text-white text-sm font-medium leading-snug group-hover:text-gold transition-colors">
+                "Estriado: Onde o Novo Vira Automático"
+              </p>
             </div>
-          ))}
+            <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-dark-DEFAULT/70 border border-white/10 flex items-center justify-center text-white/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs">
+              🔎
+            </div>
+          </div>
+
+          {/* Brain2 */}
+          <div 
+            onClick={() => openLightbox(2)}
+            className="relative overflow-hidden rounded-sm cursor-pointer group shadow-lg border border-white/5 transition-all duration-300 hover:border-gold/20" 
+            style={{ height: '230px' }}
+          >
+            <img
+              src="/images/brain2.jpg"
+              alt="Sebastian apresentando neurociência"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+              style={{ objectPosition: 'center 15%' }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-dark-DEFAULT/80 via-transparent to-transparent" />
+            <p className="absolute bottom-3 left-3 right-3 text-white text-xs font-medium group-hover:text-gold transition-colors">
+              Onde Mora Cada Emoção?
+            </p>
+            <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-dark-DEFAULT/70 border border-white/10 flex items-center justify-center text-white/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs">
+              🔎
+            </div>
+          </div>
+
+          {/* Workshop audience */}
+          <div 
+            onClick={() => openLightbox(3)}
+            className="relative overflow-hidden rounded-sm cursor-pointer group shadow-lg border border-white/5 transition-all duration-300 hover:border-gold/20" 
+            style={{ height: '230px' }}
+          >
+            <img
+              src="/images/workshop-audience.jpg"
+              alt="Plateia no workshop"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+              style={{ objectPosition: 'center 25%' }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-dark-DEFAULT/80 via-transparent to-transparent" />
+            <p className="absolute bottom-3 left-3 right-3 text-white text-xs font-medium group-hover:text-gold transition-colors">
+              Workshop Reconexão Emocional
+            </p>
+            <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-dark-DEFAULT/70 border border-white/10 flex items-center justify-center text-white/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs">
+              🔎
+            </div>
+          </div>
+
+          {/* Immersion purple mats */}
+          <div 
+            onClick={() => openLightbox(4)}
+            className="relative overflow-hidden rounded-sm cursor-pointer group shadow-lg border border-white/5 transition-all duration-300 hover:border-gold/20" 
+            style={{ height: '230px' }}
+          >
+            <img
+              src="/images/immersion.jpg"
+              alt="Imersão emocional — participantes nos tapetes roxos"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+              style={{ objectPosition: 'center 30%' }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-dark-DEFAULT/80 via-transparent to-transparent" />
+            <p className="absolute bottom-3 left-3 right-3 text-white text-xs font-medium group-hover:text-gold transition-colors">
+              Imersão Águia de Fogo
+            </p>
+            <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-dark-DEFAULT/70 border border-white/10 flex items-center justify-center text-white/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs">
+              🔎
+            </div>
+          </div>
+
+          {/* Workshop group */}
+          <div 
+            onClick={() => openLightbox(5)}
+            className="relative overflow-hidden rounded-sm cursor-pointer group shadow-lg border border-white/5 transition-all duration-300 hover:border-gold/20" 
+            style={{ height: '230px' }}
+          >
+            <img
+              src="/images/workshop-group.jpg"
+              alt="Foto em grupo após workshop"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+              style={{ objectPosition: 'center 30%' }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-dark-DEFAULT/80 via-transparent to-transparent" />
+            <p className="absolute bottom-3 left-3 right-3 text-white text-xs font-medium group-hover:text-gold transition-colors">
+              Mentoria Cicatrização Emocional
+            </p>
+            <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-dark-DEFAULT/70 border border-white/10 flex items-center justify-center text-white/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs">
+              🔎
+            </div>
+          </div>
+        </div>
+
+        {/* 3. Bottom strip: 3 portrait cells (Preserving original layout exactly) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          
+          {/* Audience Estriado */}
+          <div 
+            onClick={() => openLightbox(6)}
+            className="relative overflow-hidden rounded-sm cursor-pointer group shadow-lg border border-white/5 transition-all duration-300 hover:border-gold/20" 
+            style={{ height: '320px' }}
+          >
+            <img
+              src="/images/audience-estriado.jpg"
+              alt="Plateia no treinamento — Sebastian no palco"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+              style={{ objectPosition: 'center 25%' }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-dark-DEFAULT/80 via-transparent to-transparent" />
+            <p className="absolute bottom-3 left-3 right-3 text-white text-xs font-medium group-hover:text-gold transition-colors">
+              Treinamento de Alto Impacto
+            </p>
+            <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-dark-DEFAULT/70 border border-white/10 flex items-center justify-center text-white/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs">
+              🔎
+            </div>
+          </div>
+          
+          {/* Stage 5 etapas */}
+          <div 
+            onClick={() => openLightbox(7)}
+            className="relative overflow-hidden rounded-sm cursor-pointer group shadow-lg border border-white/5 transition-all duration-300 hover:border-gold/20" 
+            style={{ height: '320px' }}
+          >
+            <img
+              src="/images/stage-5etapas.jpg"
+              alt="Sebastian no palco — As 5 Etapas da Cura Emocional"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+              style={{ objectPosition: 'center 30%' }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-dark-DEFAULT/80 via-transparent to-transparent" />
+            <p className="absolute bottom-3 left-3 right-3 text-white text-xs font-medium group-hover:text-gold transition-colors">
+              As 5 Etapas da Cura Emocional
+            </p>
+            <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-dark-DEFAULT/70 border border-white/10 flex items-center justify-center text-white/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs">
+              🔎
+            </div>
+          </div>
+          
+          {/* Stage blue */}
+          <div 
+            onClick={() => openLightbox(8)}
+            className="relative overflow-hidden rounded-sm cursor-pointer group shadow-lg border border-white/5 transition-all duration-300 hover:border-gold/20" 
+            style={{ height: '320px' }}
+          >
+            <img
+              src="/images/stage-blue.jpg"
+              alt="Sebastian palestrando no palco com iluminação azul"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+              style={{ objectPosition: 'center 20%' }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-dark-DEFAULT/80 via-transparent to-transparent" />
+            <p className="absolute bottom-3 left-3 right-3 text-white text-xs font-medium group-hover:text-gold transition-colors">
+              Palco Internacional
+            </p>
+            <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-dark-DEFAULT/70 border border-white/10 flex items-center justify-center text-white/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs">
+              🔎
+            </div>
+          </div>
         </div>
       </div>
 
@@ -227,15 +373,12 @@ export default function Gallery() {
             className="mt-6 text-center space-y-2 max-w-2xl px-6"
             onClick={(e) => e.stopPropagation()}
           >
-            <p className="text-gold text-xs uppercase tracking-widest font-semibold">
-              {galleryItems[activeIdx].subtitle} · <span className="text-white/40">{activeIdx + 1} de {galleryItems.length}</span>
+            <p className="text-gold text-xs uppercase tracking-widest font-semibold font-sans">
+              {galleryItems[activeIdx].title} · <span className="text-white/40">{activeIdx + 1} de {galleryItems.length}</span>
             </p>
-            <h3 className="font-serif text-2xl md:text-3xl text-white font-bold leading-tight">
-              {galleryItems[activeIdx].title}
+            <h3 className="font-serif text-xl md:text-2xl text-white font-bold leading-tight">
+              {galleryItems[activeIdx].subtitle}
             </h3>
-            <p className="text-white/60 text-sm md:text-base leading-relaxed">
-              {galleryItems[activeIdx].description}
-            </p>
           </div>
         </div>
       )}
