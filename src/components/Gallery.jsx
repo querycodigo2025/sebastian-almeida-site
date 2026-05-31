@@ -50,7 +50,7 @@ const galleryItems = [
     subtitle: 'Método Query Prático'
   },
   {
-    src: '/images/stage-blue.jpg',
+    src: '/images/stage-blue-premium.jpg',
     alt: 'Sebastian palestrando no palco com iluminação azul',
     title: 'Palco Internacional',
     subtitle: 'Europa & América Latina'
