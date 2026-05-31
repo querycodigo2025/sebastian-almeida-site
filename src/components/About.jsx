@@ -30,17 +30,17 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left: Two photos stacked properly */}
           <div className="relative space-y-4">
-            {/* Main photo — full body, clean white background */}
-            <div className="relative overflow-hidden rounded-sm"
-              style={{ aspectRatio: '3/4' }}>
+            {/* Main photo — portrait, fundo neutro, sem branco */}
+            <div className="relative overflow-hidden rounded-sm mx-auto"
+              style={{ aspectRatio: '4/5', maxWidth: '340px' }}>
               <img
-                src="/images/full-body.jpg"
-                alt="Sebastian Almeida"
+                src="/images/about.jpg"
+                alt="Sebastian Almeida palestrando"
                 className="w-full h-full object-cover"
-                style={{ objectPosition: 'center 8%' }}
+                style={{ objectPosition: 'center 10%' }}
               />
               <div className="absolute inset-0 pointer-events-none"
-                style={{ background: 'linear-gradient(to top, rgba(13,13,13,0.4) 0%, transparent 50%)' }} />
+                style={{ background: 'linear-gradient(to top, rgba(13,13,13,0.5) 0%, transparent 55%)' }} />
               {/* Gold corner accents */}
               <div className="absolute top-3 left-3 w-8 h-8 border-t border-l border-gold/50" />
               <div className="absolute bottom-3 right-3 w-8 h-8 border-b border-r border-gold/50" />
