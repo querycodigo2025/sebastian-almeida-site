@@ -18,6 +18,7 @@ export default function Navbar() {
     { label: 'Livros', href: '#livros' },
     { label: 'Método Query', href: '#metodo-query' },
     { label: 'Programas', href: '#programas' },
+    { label: 'Depoimentos', href: '#depoimentos' },
     { label: 'Contato', href: '#cta' },
   ]
 

@@ -5,6 +5,8 @@ import Books from './components/Books'
 import Programs from './components/Programs'
 import MetodoQuery from './components/MetodoQuery'
 import Mission from './components/Mission'
+import Gallery from './components/Gallery'
+import Testimonials from './components/Testimonials'
 import QuickAccess from './components/QuickAccess'
 import CTAFinal from './components/CTAFinal'
 import Footer from './components/Footer'
@@ -19,6 +21,8 @@ export default function App() {
         <Books />
         <Programs />
         <MetodoQuery />
+        <Gallery />
+        <Testimonials />
         <Mission />
         <QuickAccess />
         <CTAFinal />

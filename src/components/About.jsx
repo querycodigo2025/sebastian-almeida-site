@@ -9,7 +9,7 @@ const credentials = [
   { icon: '🎓', text: 'Pós-graduado em Neurociência' },
   { icon: '🧠', text: 'Especialista em PNL e Psicanálise' },
   { icon: '🌀', text: 'Especialista em Renascimento (Rebirth)' },
-  { icon: '🌍', text: 'Atuação em Europa, América Latina e Brasil' },
+  { icon: '🌍', text: 'Europa, América Latina e Brasil' },
   { icon: '✍️', text: 'Autor de 3 livros bestsellers' },
   { icon: '🎤', text: 'Palestrante e Treinador Internacional' },
 ]
@@ -17,7 +17,6 @@ const credentials = [
 export default function About() {
   return (
     <section id="sobre" className="py-24 md:py-32 relative overflow-hidden">
-      {/* Background subtle gradient */}
       <div className="absolute inset-0 pointer-events-none"
         style={{ background: 'linear-gradient(180deg, #0D0D0D 0%, #141414 50%, #0D0D0D 100%)' }} />
 
@@ -29,28 +28,39 @@ export default function About() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left: Photo */}
-          <div className="relative">
-            <div className="relative">
+          {/* Left: Two photos stacked properly */}
+          <div className="relative space-y-4">
+            {/* Main speaker photo — portrait, full visible */}
+            <div className="relative overflow-hidden rounded-sm"
+              style={{ aspectRatio: '3/4' }}>
               <img
-                src="/images/about.jpg"
-                alt="Sebastian Almeida apresentando"
-                className="w-full max-w-sm md:max-w-md mx-auto object-cover rounded-sm"
-                style={{ aspectRatio: '3/4', objectPosition: 'center top' }}
+                src="/images/speaker-vest.jpg"
+                alt="Sebastian Almeida palestrando"
+                className="w-full h-full object-cover"
+                style={{ objectPosition: 'center 15%' }}
               />
-              {/* Decorative elements */}
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 border border-gold/30" />
-              <div className="absolute -top-4 -left-4 w-16 h-16 border border-purple/40" />
+              <div className="absolute inset-0 pointer-events-none"
+                style={{ background: 'linear-gradient(to top, rgba(13,13,13,0.4) 0%, transparent 50%)' }} />
+              {/* Gold corner accents */}
+              <div className="absolute top-3 left-3 w-8 h-8 border-t border-l border-gold/50" />
+              <div className="absolute bottom-3 right-3 w-8 h-8 border-b border-r border-gold/50" />
             </div>
 
-            {/* Second image side by side on larger screens */}
-            <div className="hidden lg:block absolute -right-16 bottom-12 w-48 h-64 shadow-2xl rounded-sm overflow-hidden border border-gold/20">
+            {/* Second photo — landscape event */}
+            <div className="relative overflow-hidden rounded-sm"
+              style={{ aspectRatio: '16/7' }}>
               <img
-                src="/images/stage-blue.jpg"
-                alt="Sebastian no palco"
+                src="/images/event-large.jpg"
+                alt="Evento com grande público"
                 className="w-full h-full object-cover"
-                style={{ objectPosition: 'center top' }}
+                style={{ objectPosition: 'center 40%' }}
               />
+              <div className="absolute inset-0"
+                style={{ background: 'linear-gradient(to right, rgba(13,13,13,0.6) 0%, transparent 40%, rgba(13,13,13,0.3) 100%)' }} />
+              <div className="absolute bottom-3 left-4">
+                <p className="text-gold text-xs uppercase tracking-widest font-semibold">Impacto real</p>
+                <p className="text-white font-serif text-sm">Treinamento de Alto Impacto</p>
+              </div>
             </div>
           </div>
 
@@ -77,7 +87,7 @@ export default function About() {
             <div className="grid grid-cols-2 gap-3">
               {credentials.map((c) => (
                 <div key={c.text} className="flex items-start gap-3 bg-dark-3/50 border border-white/5 rounded-sm p-3">
-                  <span className="text-xl mt-0.5">{c.icon}</span>
+                  <span className="text-xl mt-0.5 flex-shrink-0">{c.icon}</span>
                   <span className="text-white/70 text-sm leading-snug">{c.text}</span>
                 </div>
               ))}
@@ -100,25 +110,6 @@ export default function About() {
               </ul>
             </div>
           </div>
-        </div>
-
-        {/* Gallery strip */}
-        <div className="mt-20 grid grid-cols-3 md:grid-cols-4 gap-3">
-          {[
-            { src: '/images/stage-5etapas.jpg', alt: 'Sebastian no palco — As 5 Etapas' },
-            { src: '/images/workshop-group.jpg', alt: 'Grupo no workshop' },
-            { src: '/images/brain.jpg', alt: 'Explicando neurociência' },
-            { src: '/images/workshop-audience.jpg', alt: 'Plateia no workshop' },
-          ].map((img) => (
-            <div key={img.src} className="relative overflow-hidden rounded-sm aspect-square">
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-dark-DEFAULT/20 hover:bg-transparent transition-colors" />
-            </div>
-          ))}
         </div>
       </div>
     </section>
