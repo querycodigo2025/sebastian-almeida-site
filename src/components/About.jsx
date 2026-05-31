@@ -89,13 +89,14 @@ export default function About() {
           {/* Biography Narrative text wrapper */}
           <div className="lg:col-span-8 space-y-6">
             
-            {/* Small transparent cutout photo floating on the right side of the biography (0 leaks, solid clothes) */}
-            <div className="w-28 h-28 md:w-36 md:h-36 float-none md:float-right mx-auto md:mx-0 md:ml-8 mb-4 md:mb-1 relative group drop-shadow-[0_15px_30px_rgba(0,0,0,0.7)] z-20">
+            {/* Small portrait speaking photo floating on the right side of the biography (Same high-quality photo from the Pádua site, 100% solid, no stains) */}
+            <div className="w-32 h-44 md:w-40 md:h-56 float-none md:float-right mx-auto md:mx-0 md:ml-8 mb-6 md:mb-2 relative group overflow-hidden rounded-2xl border border-gold/30 shadow-[0_15px_30px_rgba(0,0,0,0.75)] z-20">
               <img
                 src="/images/about-cutout.png"
-                alt="Sebastian Almeida"
-                className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                alt="Sebastian Almeida palestrando"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
             </div>
 
             <p className="text-white/85 text-xl md:text-2xl leading-relaxed font-light">
