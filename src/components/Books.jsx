@@ -12,7 +12,7 @@ const books = [
     cover: '/images/book-golpista.jpg',
     description:
       'Revela os padrões ocultos de manipulação emocional e ensina como identificar, se proteger e se libertar de relacionamentos tóxicos que drenam energia e autoestima.',
-    themes: ['Relacionamentos', 'Autoprotação', 'Libertação'],
+    themes: ['Relacionamentos', 'Autoproteção', 'Libertação'],
     highlight: 'Bestseller',
   },
   {
