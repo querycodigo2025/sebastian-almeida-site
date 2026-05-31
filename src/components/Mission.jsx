@@ -51,7 +51,7 @@ export default function Mission() {
               },
               {
                 icon: '🌀',
-                title: 'Espiritualidade',
+                title: 'Essência',
                 text: 'Reconexão com a essência e o propósito de vida mais profundo.',
               },
               {
