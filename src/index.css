@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0D0D0D;
+    color: #F5F5F0;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+@layer components {
+  .gold-text {
+    @apply text-transparent bg-clip-text;
+    background-image: linear-gradient(135deg, #C9A96E 0%, #E2C98A 40%, #C9A96E 60%, #A07840 100%);
+  }
+
+  .gold-shimmer {
+    background-image: linear-gradient(
+      90deg,
+      #C9A96E 0%,
+      #E2C98A 25%,
+      #FFF0B0 50%,
+      #E2C98A 75%,
+      #C9A96E 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold rounded-sm transition-all duration-300;
+    color: #0D0D0D;
+    background: linear-gradient(135deg, #C9A96E, #E2C98A, #C9A96E);
+    background-size: 200% auto;
+  }
+  .btn-gold:hover {
+    background-position: right center;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(201, 169, 110, 0.4);
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold rounded-sm border transition-all duration-300 text-white;
+    border-color: rgba(201, 169, 110, 0.6);
+  }
+  .btn-outline:hover {
+    border-color: #C9A96E;
+    background: rgba(201, 169, 110, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.4), transparent);
+  }
+
+  .card-dark {
+    background: linear-gradient(135deg, #1C1C1C 0%, #141414 100%);
+    border: 1px solid rgba(201, 169, 110, 0.15);
+  }
+  .card-dark:hover {
+    border-color: rgba(201, 169, 110, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0D0D0D; }
+::-webkit-scrollbar-thumb { background: #C9A96E; border-radius: 3px; }
