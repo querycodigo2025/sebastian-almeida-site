@@ -7,58 +7,16 @@ export default function Gallery() {
 
   const galleryItems = [
     {
-      src: '/images/event-large.jpg',
-      alt: t('gal.item1.title'),
-      title: t('gal.item1.title'),
-      subtitle: t('gal.item1.sub')
+      src: '/images/sebastian-padua.jpg',
+      alt: t('gal.portrait.title'),
+      title: t('gal.portrait.title'),
+      subtitle: t('gal.portrait.sub')
     },
     {
-      src: '/images/audience-stage.jpg',
-      alt: t('gal.item2.title'),
-      title: t('gal.item2.title'),
-      subtitle: t('gal.item2.sub')
-    },
-    {
-      src: '/images/brain2.jpg',
-      alt: t('gal.item3.title'),
-      title: t('gal.item3.title'),
-      subtitle: t('gal.item3.sub')
-    },
-    {
-      src: '/images/workshop-audience.jpg',
-      alt: t('gal.item4.title'),
-      title: t('gal.item4.title'),
-      subtitle: t('gal.item4.sub')
-    },
-    {
-      src: '/images/immersion.jpg',
-      alt: t('gal.item5.title'),
-      title: t('gal.item5.title'),
-      subtitle: t('gal.item5.sub')
-    },
-    {
-      src: '/images/workshop-group.jpg',
-      alt: t('gal.item6.title'),
-      title: t('gal.item6.title'),
-      subtitle: t('gal.item6.sub')
-    },
-    {
-      src: '/images/audience-estriado.jpg',
-      alt: t('gal.item7.title'),
-      title: t('gal.item7.title'),
-      subtitle: t('gal.item7.sub')
-    },
-    {
-      src: '/images/stage-5etapas.jpg',
-      alt: t('gal.item8.title'),
-      title: t('gal.item8.title'),
-      subtitle: t('gal.item8.sub')
-    },
-    {
-      src: '/images/stage-blue-premium.jpg',
-      alt: t('gal.item9.title'),
-      title: t('gal.item9.title'),
-      subtitle: t('gal.item9.sub')
+      src: '/images/stage-lovish.jpg',
+      alt: t('gal.stage.title'),
+      title: t('gal.stage.title'),
+      subtitle: t('gal.stage.sub')
     }
   ]
 
@@ -115,8 +73,8 @@ export default function Gallery() {
           <div className="h-0.5 w-16 bg-gold mx-auto mt-5 opacity-70" />
         </div>
 
-        {/* Premium Pádua Grid: 3 columns on desktop, rounded-2xl cards, custom shadow, object-cover */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Premium Pádua Grid: 2 columns on desktop, rounded-2xl cards, custom shadow, object-cover */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {galleryItems.map((item, index) => (
             <figure
               key={item.src + index}
@@ -127,7 +85,7 @@ export default function Gallery() {
               <img
                 src={item.src}
                 alt={item.alt}
-                className="h-80 w-full object-cover transition duration-700 group-hover:scale-105"
+                className="h-[480px] md:h-[540px] w-full object-cover transition duration-700 group-hover:scale-105"
                 style={{ objectPosition: 'center 20%' }}
                 loading="lazy"
               />
