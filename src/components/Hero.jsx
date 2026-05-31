@@ -33,7 +33,7 @@ export default function Hero() {
               </h1>
               {/* Subtítulo abaixo do nome */}
               <p className="text-gold text-base font-semibold uppercase tracking-[0.25em] mb-6">
-                Cientista Emocional · Criador do Método Query
+                Escritor · Consultor · Mentor
               </p>
               <p className="text-white/80 text-lg md:text-xl leading-relaxed max-w-xl">
                 Referência em treinamentos de alto impacto que unem neurociência,
@@ -93,6 +93,7 @@ export default function Hero() {
               <div className="absolute bottom-6 left-6 z-30 bg-dark-DEFAULT/90 backdrop-blur-sm border border-gold/30 rounded-sm px-4 py-3">
                 <p className="text-gold text-xs uppercase tracking-widest font-semibold">Criador do</p>
                 <p className="text-white font-serif text-lg font-bold">Método Query</p>
+                <p className="text-white/50 text-[10px] uppercase tracking-widest mt-1">Cientista Emocional</p>
               </div>
             </div>
           </div>
