@@ -30,14 +30,14 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left: Two photos stacked properly */}
           <div className="relative space-y-4">
-            {/* Main speaker photo — portrait, full visible */}
+            {/* Main photo — full body, clean white background */}
             <div className="relative overflow-hidden rounded-sm"
               style={{ aspectRatio: '3/4' }}>
               <img
-                src="/images/speaker-vest.jpg"
-                alt="Sebastian Almeida palestrando"
+                src="/images/full-body.jpg"
+                alt="Sebastian Almeida"
                 className="w-full h-full object-cover"
-                style={{ objectPosition: 'center 15%' }}
+                style={{ objectPosition: 'center 8%' }}
               />
               <div className="absolute inset-0 pointer-events-none"
                 style={{ background: 'linear-gradient(to top, rgba(13,13,13,0.4) 0%, transparent 50%)' }} />

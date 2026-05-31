@@ -167,14 +167,15 @@ export default function Gallery() {
           </div>
         </div>
 
-        {/* Bottom strip: 3 wide images */}
+        {/* Bottom strip: 3 portrait cells — full figure visible */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="relative overflow-hidden rounded-sm" style={{ height: '200px' }}>
+          {/* Landscape event — wide crop works fine */}
+          <div className="relative overflow-hidden rounded-sm" style={{ height: '320px' }}>
             <img
               src="/images/audience-estriado.jpg"
-              alt="Plateia no treinamento"
+              alt="Plateia no treinamento — Sebastian no palco"
               className="w-full h-full object-cover"
-              style={{ objectPosition: 'center 20%' }}
+              style={{ objectPosition: 'center 25%' }}
             />
             <div className="absolute inset-0"
               style={{ background: 'linear-gradient(to top, rgba(13,13,13,0.65) 0%, transparent 55%)' }} />
@@ -182,12 +183,13 @@ export default function Gallery() {
               Treinamento de Alto Impacto
             </p>
           </div>
-          <div className="relative overflow-hidden rounded-sm" style={{ height: '200px' }}>
+          {/* Stage 5 etapas — full person visible at 320px */}
+          <div className="relative overflow-hidden rounded-sm" style={{ height: '320px' }}>
             <img
               src="/images/stage-5etapas.jpg"
-              alt="Sebastian no palco — As 5 Etapas"
+              alt="Sebastian no palco — As 5 Etapas da Cura Emocional"
               className="w-full h-full object-cover"
-              style={{ objectPosition: 'center 20%' }}
+              style={{ objectPosition: 'center 30%' }}
             />
             <div className="absolute inset-0"
               style={{ background: 'linear-gradient(to top, rgba(13,13,13,0.65) 0%, transparent 55%)' }} />
@@ -195,12 +197,13 @@ export default function Gallery() {
               As 5 Etapas da Cura Emocional
             </p>
           </div>
-          <div className="relative overflow-hidden rounded-sm" style={{ height: '200px' }}>
+          {/* Stage blue — portrait, mostrar corpo inteiro */}
+          <div className="relative overflow-hidden rounded-sm" style={{ height: '320px' }}>
             <img
               src="/images/stage-blue.jpg"
-              alt="Sebastian no palco com luz azul"
+              alt="Sebastian palestrando no palco com iluminação azul"
               className="w-full h-full object-cover"
-              style={{ objectPosition: 'center 15%' }}
+              style={{ objectPosition: 'center 20%' }}
             />
             <div className="absolute inset-0"
               style={{ background: 'linear-gradient(to top, rgba(13,13,13,0.65) 0%, transparent 55%)' }} />

@@ -16,7 +16,7 @@ export default function Footer() {
                 <span className="text-white"> Almeida</span>
               </p>
               <p className="text-white/40 text-sm mt-1 uppercase tracking-widest">
-                Neurocientista · Escritor · Mentor
+                Cientista Emocional · Criador do Método Query
               </p>
             </div>
             <p className="text-white/50 text-sm leading-relaxed">
@@ -87,7 +87,7 @@ export default function Footer() {
             © {currentYear} Sebastian Almeida. Todos os direitos reservados.
           </p>
           <p className="text-white/20 text-xs">
-            Criador do Método Query · Neurocientista · Escritor · Palestrante Internacional
+            Cientista Emocional · Criador do Método Query · Escritor · Palestrante Internacional
           </p>
         </div>
       </div>

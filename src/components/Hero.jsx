@@ -26,17 +26,17 @@ export default function Hero() {
           {/* Left: Text */}
           <div className="order-2 lg:order-1 space-y-8">
             <div>
-              <p className="text-gold text-sm font-semibold uppercase tracking-[0.3em] mb-4">
-                Neurocientista · Escritor · Mentor
-              </p>
-              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4">
                 <span className="text-white">Sebastian</span>
                 <br />
                 <span className="gold-shimmer">Almeida</span>
               </h1>
+              {/* Subtítulo abaixo do nome */}
+              <p className="text-gold text-base font-semibold uppercase tracking-[0.25em] mb-6">
+                Cientista Emocional · Criador do Método Query
+              </p>
               <p className="text-white/80 text-lg md:text-xl leading-relaxed max-w-xl">
-                Cientista emocional, criador do <strong className="text-gold">Método Query</strong> e
-                referência em treinamentos de alto impacto que unem neurociência,
+                Referência em treinamentos de alto impacto que unem neurociência,
                 espiritualidade, psicanálise, PNL e reprogramação emocional.
               </p>
             </div>
