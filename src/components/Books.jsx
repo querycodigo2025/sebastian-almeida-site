@@ -102,23 +102,32 @@ export default function Books() {
           ))}
         </div>
 
-        {/* Stage book photo */}
-        <div className="mt-16 relative rounded-sm overflow-hidden" style={{ height: '400px' }}>
+        {/* Banner Autor & Palestrante */}
+        <div className="mt-16 relative rounded-sm overflow-hidden" style={{ height: '420px' }}>
           <img
-            src="/images/stage-book.jpg"
-            alt="Sebastian apresentando no palco"
+            src="/images/audience-stage.jpg"
+            alt="Sebastian Almeida no palco"
             className="w-full h-full object-cover"
-            style={{ objectPosition: 'center 10%' }}
+            style={{ objectPosition: 'center 18%' }}
           />
+          {/* Overlay escuro que integra com o tema */}
           <div className="absolute inset-0"
-            style={{ background: 'linear-gradient(to right, rgba(13,13,13,0.8) 0%, rgba(13,13,13,0.3) 50%, rgba(13,13,13,0.8) 100%)' }} />
-          <div className="absolute inset-0 flex items-center justify-center text-center">
-            <div>
-              <p className="text-gold text-xs uppercase tracking-widest mb-2 font-semibold">Autor & Palestrante</p>
-              <p className="font-serif text-3xl md:text-4xl text-white font-bold">
-                Conhecimento que liberta
-              </p>
-            </div>
+            style={{ background: 'linear-gradient(135deg, rgba(13,13,13,0.92) 0%, rgba(13,13,13,0.6) 50%, rgba(13,13,13,0.75) 100%)' }} />
+          {/* Conteúdo centralizado */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+            <div className="h-px w-16 mb-6"
+              style={{ background: 'linear-gradient(90deg, transparent, #C9A96E, transparent)' }} />
+            <p className="text-gold text-xs uppercase tracking-[0.3em] font-semibold mb-3">
+              Autor &amp; Palestrante
+            </p>
+            <p className="font-serif text-4xl md:text-5xl text-white font-bold mb-4 leading-tight">
+              Conhecimento que liberta
+            </p>
+            <p className="text-white/60 max-w-md text-base">
+              Obras que já transformaram milhares de leitores pelo Brasil e pelo mundo.
+            </p>
+            <div className="h-px w-16 mt-6"
+              style={{ background: 'linear-gradient(90deg, transparent, #C9A96E, transparent)' }} />
           </div>
         </div>
       </div>
