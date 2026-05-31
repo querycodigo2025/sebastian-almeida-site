@@ -7,16 +7,16 @@ export default function Gallery() {
 
   const galleryItems = [
     {
-      src: '/images/sebastian-padua.jpg',
-      alt: t('gal.portrait.title'),
-      title: t('gal.portrait.title'),
-      subtitle: t('gal.portrait.sub')
+      src: '/images/stage-lovish.jpg',
+      alt: t('gal.stage1.title'),
+      title: t('gal.stage1.title'),
+      subtitle: t('gal.stage1.sub')
     },
     {
-      src: '/images/stage-lovish.jpg',
-      alt: t('gal.stage.title'),
-      title: t('gal.stage.title'),
-      subtitle: t('gal.stage.sub')
+      src: '/images/stage-blue-premium.jpg',
+      alt: t('gal.stage2.title'),
+      title: t('gal.stage2.title'),
+      subtitle: t('gal.stage2.sub')
     }
   ]
 

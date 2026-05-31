@@ -159,10 +159,10 @@ export const T = {
     'gal.tag': 'Galeria & Imersões',
     'gal.title': 'Experiências que',
     'gal.titleGold': 'Transformam',
-    'gal.portrait.title': 'Retrato Oficial',
-    'gal.portrait.sub': 'Sebastian Almeida',
-    'gal.stage.title': 'Palco Internacional',
-    'gal.stage.sub': 'Conferências & Treinamentos de Alto Impacto',
+    'gal.stage1.title': 'Palco Internacional',
+    'gal.stage1.sub': 'Conferências & Treinamentos de Alto Impacto',
+    'gal.stage2.title': 'Oratória & Liderança',
+    'gal.stage2.sub': 'Treinamento de Alto Impacto e Conexão Humana',
 
     // TESTIMONIALS
     'test.tag': 'Depoimentos',
@@ -410,10 +410,10 @@ export const T = {
     'gal.tag': 'Gallery & Immersions',
     'gal.title': 'Experiences that',
     'gal.titleGold': 'Transform',
-    'gal.portrait.title': 'Official Portrait',
-    'gal.portrait.sub': 'Sebastian Almeida',
-    'gal.stage.title': 'International Stage',
-    'gal.stage.sub': 'High-Impact Keynotes & Training',
+    'gal.stage1.title': 'International Stage',
+    'gal.stage1.sub': 'High-Impact Keynotes & Training',
+    'gal.stage2.title': 'Public Speaking & Leadership',
+    'gal.stage2.sub': 'High-Impact Training & Human Connection',
 
     // TESTIMONIALS
     'test.tag': 'Testimonials',
@@ -661,10 +661,10 @@ export const T = {
     'gal.tag': 'Galería e Inmersiones',
     'gal.title': 'Experiências que',
     'gal.titleGold': 'Transforman',
-    'gal.portrait.title': 'Retrato Oficial',
-    'gal.portrait.sub': 'Sebastian Almeida',
-    'gal.stage.title': 'Escenario Internacional',
-    'gal.stage.sub': 'Conferencias y Entrenamientos de Alto Impacto',
+    'gal.stage1.title': 'Escenario Internacional',
+    'gal.stage1.sub': 'Conferencias y Entrenamientos de Alto Impacto',
+    'gal.stage2.title': 'Oratoria y Liderazgo',
+    'gal.stage2.sub': 'Entrenamiento de Alto Impacto y Conexión Humana',
 
     // TESTIMONIALS
     'test.tag': 'Testimonios',
