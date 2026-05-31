@@ -1,3 +1,48 @@
+import { useState, useEffect } from 'react'
+
+// Component to dynamically remove white background from images with soft edge feathering
+function TransparentImage({ src, alt, className }) {
+  const [processedSrc, setProcessedSrc] = useState(src)
+
+  useEffect(() => {
+    const img = new Image()
+    img.src = src
+    img.onload = () => {
+      const canvas = document.createElement('canvas')
+      canvas.width = img.width
+      canvas.height = img.height
+      const ctx = canvas.getContext('2d')
+      if (!ctx) return
+
+      ctx.drawImage(img, 0, 0)
+      const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height)
+      const data = imgData.data
+
+      // Loop through all pixels (r, g, b, a)
+      for (let i = 0; i < data.length; i += 4) {
+        const r = data[i]
+        const g = data[i + 1]
+        const b = data[i + 2]
+        
+        // Remove white background (R, G, B > 225)
+        if (r > 225 && g > 225 && b > 225) {
+          data[i + 3] = 0 // completely transparent
+        } else if (r > 200 && g > 200 && b > 200) {
+          // Soft edge blending (feathering) to prevent jaggy borders
+          const maxVal = Math.max(r, g, b)
+          const factor = (225 - maxVal) / 25
+          data[i + 3] = Math.round(data[i + 3] * Math.max(0, factor))
+        }
+      }
+
+      ctx.putImageData(imgData, 0, 0)
+      setProcessedSrc(canvas.toDataURL())
+    }
+  }, [src])
+
+  return <img src={processedSrc} alt={alt} className={className} />
+}
+
 const credentials = [
   { icon: '🎓', text: 'Pós-graduado em Neurociência' },
   { icon: '🧠', text: 'Especialista em PNL e Psicanálise' },
@@ -57,14 +102,13 @@ export default function About() {
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-DEFAULT/40 to-transparent" />
               </div>
 
-              {/* Overlapping secondary photo - about.jpg (kept sharp, small aspect square) */}
-              <div className="absolute bottom-0 right-0 w-[52%] aspect-square rounded-sm overflow-hidden border-2 border-gold/30 shadow-[0_20px_50px_rgba(0,0,0,0.8)] z-20">
-                <img
+              {/* Overlapping secondary photo - Transparent cutout (about.jpg with white background removed) */}
+              <div className="absolute bottom-0 right-0 w-[52%] aspect-square z-20 group drop-shadow-[0_25px_40px_rgba(0,0,0,0.85)]">
+                <TransparentImage
                   src="/images/about.jpg"
-                  alt="Sebastian Almeida retrato de estúdio"
-                  className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+                  alt="Sebastian Almeida retrato de estúdio recorte"
+                  className="w-full h-full object-contain transition-transform duration-700 hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-DEFAULT/50 to-transparent" />
               </div>
 
               {/* Decorative design elements */}
@@ -73,9 +117,19 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right Column: Bio Narrative */}
+          {/* Right Column: Bio Narrative with Small Cutout on the Right */}
           <div className="lg:col-span-7 space-y-8 order-1 lg:order-2">
-            <div className="space-y-6">
+            <div className="space-y-6 overflow-hidden">
+              
+              {/* Small transparent cutout photo floating on the right side (About me cutout) */}
+              <div className="w-28 h-28 md:w-36 md:h-36 float-none md:float-right mx-auto md:mx-0 md:ml-6 mb-4 md:mb-1 relative group drop-shadow-[0_15px_30px_rgba(0,0,0,0.7)]">
+                <TransparentImage
+                  src="/images/about.jpg"
+                  alt="Sebastian Almeida retrato transparente"
+                  className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+
               <p className="text-white/85 text-xl md:text-2xl leading-relaxed font-light">
                 Sou <strong className="text-white font-semibold">Sebastian Almeida</strong>, formado em
                 Administração e Comércio Exterior, com pós-graduação em Neurociência e
