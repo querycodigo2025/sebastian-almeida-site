@@ -33,7 +33,7 @@ export default function Hero() {
               </h1>
               {/* Subtítulo abaixo do nome */}
               <p className="text-gold text-base font-semibold uppercase tracking-[0.25em] mb-6">
-                Escritor · Consultor · Mentor
+                Cientista Emocional · Escritor · Consultor · Mentor
               </p>
               <p className="text-white/80 text-lg md:text-xl leading-relaxed max-w-xl">
                 Referência em treinamentos de alto impacto que unem neurociência,
