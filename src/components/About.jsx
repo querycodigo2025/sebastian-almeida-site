@@ -218,62 +218,74 @@ export default function About() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-6">
           
           {/* Card 1: audience-stage.jpg */}
-          <div className="relative overflow-hidden rounded-2xl aspect-[3/4] group border border-white/5 shadow-[0_15px_30px_rgba(0,0,0,0.55)]">
-            <img 
-              src="/images/audience-stage.jpg" 
-              alt="Plateia e Sebastian no palco" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-              style={{ objectPosition: 'center 20%' }} 
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-dark-DEFAULT/80 to-transparent" />
-            <p className="absolute bottom-3 left-3 right-3 text-white text-xs font-medium">
-              Estriado: Onde o Novo Vira Automático
-            </p>
+          <div className="group overflow-hidden rounded-2xl border border-white/5 bg-[#141414]/50 text-center shadow-[0_15px_30px_rgba(0,0,0,0.7)] transition-all duration-300 hover:-translate-y-2 hover:border-gold/30 hover:shadow-[0_20px_40px_rgba(0,0,0,0.85)]">
+            <div className="relative aspect-[3/4] overflow-hidden bg-black">
+              <img 
+                src="/images/audience-stage.jpg" 
+                alt="Plateia e Sebastian no palco" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                style={{ objectPosition: 'center 20%' }} 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D]/70 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+            </div>
+            <div className="p-4 bg-[#141414]/30 border-t border-white/5 text-center">
+              <p className="font-serif text-base md:text-lg text-white">Estriado</p>
+              <p className="mt-1 text-[9px] md:text-[10px] font-semibold uppercase tracking-wider text-gold">Onde o Novo Vira Automático</p>
+            </div>
           </div>
 
           {/* Card 2: stage-5etapas.jpg */}
-          <div className="relative overflow-hidden rounded-sm aspect-[3/4] group border border-white/5 shadow-[0_15px_30px_rgba(0,0,0,0.55)] rounded-2xl">
-            <img 
-              src="/images/stage-5etapas.jpg" 
-              alt="As 5 etapas do Método Query" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-              style={{ objectPosition: 'center 20%' }} 
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-dark-DEFAULT/80 to-transparent" />
-            <p className="absolute bottom-3 left-3 right-3 text-white text-xs font-medium">
-              As 5 Etapas do Método Query
-            </p>
+          <div className="group overflow-hidden rounded-2xl border border-white/5 bg-[#141414]/50 text-center shadow-[0_15px_30px_rgba(0,0,0,0.7)] transition-all duration-300 hover:-translate-y-2 hover:border-gold/30 hover:shadow-[0_20px_40px_rgba(0,0,0,0.85)]">
+            <div className="relative aspect-[3/4] overflow-hidden bg-black">
+              <img 
+                src="/images/stage-5etapas.jpg" 
+                alt="As 5 etapas do Método Query" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                style={{ objectPosition: 'center 20%' }} 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D]/70 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+            </div>
+            <div className="p-4 bg-[#141414]/30 border-t border-white/5 text-center">
+              <p className="font-serif text-base md:text-lg text-white">Método Query</p>
+              <p className="mt-1 text-[9px] md:text-[10px] font-semibold uppercase tracking-wider text-gold">As 5 Etapas do Desbloqueio</p>
+            </div>
           </div>
 
           {/* Card 3: brain2.jpg */}
-          <div className="relative overflow-hidden rounded-sm aspect-[3/4] group border border-white/5 shadow-[0_15px_30px_rgba(0,0,0,0.55)] rounded-2xl">
-            <img 
-              src="/images/brain2.jpg" 
-              alt="Neurociência e comportamento humano" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-              style={{ objectPosition: 'center 20%' }} 
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-dark-DEFAULT/80 to-transparent" />
-            <p className="absolute bottom-3 left-3 right-3 text-white text-xs font-medium">
-              Neurociência Prática Aplicada
-            </p>
+          <div className="group overflow-hidden rounded-2xl border border-white/5 bg-[#141414]/50 text-center shadow-[0_15px_30px_rgba(0,0,0,0.7)] transition-all duration-300 hover:-translate-y-2 hover:border-gold/30 hover:shadow-[0_20px_40px_rgba(0,0,0,0.85)]">
+            <div className="relative aspect-[3/4] overflow-hidden bg-black">
+              <img 
+                src="/images/brain2.jpg" 
+                alt="Neurociência e comportamento humano" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                style={{ objectPosition: 'center 20%' }} 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D]/70 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+            </div>
+            <div className="p-4 bg-[#141414]/30 border-t border-white/5 text-center">
+              <p className="font-serif text-base md:text-lg text-white">Neurociência</p>
+              <p className="mt-1 text-[9px] md:text-[10px] font-semibold uppercase tracking-wider text-gold">Prática Aplicada ao Sucesso</p>
+            </div>
           </div>
 
           {/* Card 4: immersion.jpg */}
-          <div className="relative overflow-hidden rounded-sm aspect-[3/4] group border border-white/5 shadow-[0_15px_30px_rgba(0,0,0,0.55)] rounded-2xl">
-            <img 
-              src="/images/immersion.jpg" 
-              alt="Imersão emocional profunda" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-              style={{ objectPosition: 'center 20%' }} 
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-dark-DEFAULT/80 to-transparent" />
-            <p className="absolute bottom-3 left-3 right-3 text-white text-xs font-medium">
-              Imersão Águia de Fogo
-            </p>
+          <div className="group overflow-hidden rounded-2xl border border-white/5 bg-[#141414]/50 text-center shadow-[0_15px_30px_rgba(0,0,0,0.7)] transition-all duration-300 hover:-translate-y-2 hover:border-gold/30 hover:shadow-[0_20px_40px_rgba(0,0,0,0.85)]">
+            <div className="relative aspect-[3/4] overflow-hidden bg-black">
+              <img 
+                src="/images/immersion.jpg" 
+                alt="Imersão emocional profunda" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                style={{ objectPosition: 'center 20%' }} 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D]/70 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+            </div>
+            <div className="p-4 bg-[#141414]/30 border-t border-white/5 text-center">
+              <p className="font-serif text-base md:text-lg text-white">Águia de Fogo</p>
+              <p className="mt-1 text-[9px] md:text-[10px] font-semibold uppercase tracking-wider text-gold">Imersão Emocional Profunda</p>
+            </div>
           </div>
 
         </div>
