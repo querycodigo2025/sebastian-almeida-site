@@ -22,7 +22,7 @@ export default function About() {
       style={{ background: 'linear-gradient(180deg, #0D0D0D 0%, #141414 60%, #0D0D0D 100%)' }}
     >
 
-      {/* ── 1. BANNER DO TOPO (Visual Super Premium com a Foto Correta about.jpg sem cortes) ── */}
+      {/* ── 1. BANNER DO TOPO (Pádua Style: Foto about.jpg em moldura redonda rounded-2xl) ── */}
       <div 
         className="relative overflow-hidden w-full flex items-center" 
         style={{ 
@@ -64,9 +64,9 @@ export default function About() {
               </div>
             </div>
 
-            {/* Right side: The Correct Photo (about.jpg - 100% sharp and not cut off) */}
+            {/* Right side: The Correct Photo (about.jpg - 100% sharp and not cut off, rounded-2xl like Pádua) */}
             <div className="md:col-span-5 h-full flex items-center justify-center md:justify-end relative py-6">
-              <div className="relative h-[85%] aspect-square rounded-sm overflow-hidden border border-gold/30 shadow-[0_20px_45px_rgba(0,0,0,0.85)] z-20">
+              <div className="relative h-[85%] aspect-square rounded-2xl overflow-hidden border border-gold/30 shadow-[0_20px_50px_rgba(0,0,0,0.85)] z-20">
                 <img
                   src="/images/about.jpg"
                   alt="Sebastian Almeida retrato de estúdio"
@@ -75,7 +75,7 @@ export default function About() {
               </div>
               
               {/* Decorative frames */}
-              <div className="absolute top-[10%] right-[3%] w-[68%] h-[80%] border border-gold/15 -z-10 rounded-sm hidden md:block" />
+              <div className="absolute top-[10%] right-[3%] w-[68%] h-[80%] border border-gold/15 -z-10 rounded-2xl hidden md:block" />
             </div>
 
           </div>
@@ -130,7 +130,7 @@ export default function About() {
           </div>
 
           {/* Side stats card to balance the grid layout */}
-          <div className="lg:col-span-4 p-6 rounded-sm border border-white/5 bg-[#141414]/60 space-y-6 lg:mt-2">
+          <div className="lg:col-span-4 p-6 rounded-2xl border border-white/5 bg-[#141414]/60 space-y-6 lg:mt-2">
             <h3 className="font-serif text-xl font-bold text-white border-b border-white/5 pb-3">Destaques Rápidos</h3>
             <div className="space-y-4">
               {[
@@ -149,12 +149,12 @@ export default function About() {
         </div>
       </div>
 
-      {/* ── 3. DUAS FOTOS DESTAQUE ── */}
+      {/* ── 3. DUAS FOTOS DESTAQUE (Pádua Style: rounded-2xl e shadow profundo) ── */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 pb-20">
         <div className="grid md:grid-cols-2 gap-8">
 
           {/* event-large — público lotado em proporção retrato perfeita */}
-          <div className="relative overflow-hidden rounded-sm aspect-[4/5] sm:aspect-[3/4] group border border-white/5 shadow-2xl">
+          <div className="relative overflow-hidden rounded-2xl aspect-[4/5] sm:aspect-[3/4] group border border-white/5 shadow-[0_15px_40px_rgba(0,0,0,0.55)]">
             <img
               src="/images/event-large.jpg"
               alt="Grande público no evento de Sebastian Almeida"
@@ -171,7 +171,7 @@ export default function About() {
           </div>
 
           {/* audience-estriado — palco + plateia em proporção retrato perfeita */}
-          <div className="relative overflow-hidden rounded-sm aspect-[4/5] sm:aspect-[3/4] group border border-white/5 shadow-2xl">
+          <div className="relative overflow-hidden rounded-2xl aspect-[4/5] sm:aspect-[3/4] group border border-white/5 shadow-[0_15px_40px_rgba(0,0,0,0.55)]">
             <img
               src="/images/audience-estriado.jpg"
               alt="Sebastian no palco — Estriado: Onde o Novo Vira Automático"
@@ -199,7 +199,7 @@ export default function About() {
           {credentials.map(c => (
             <div 
               key={c.text}
-              className="flex items-start gap-4 p-4 rounded-sm border border-white/5 transition-colors hover:border-gold/20"
+              className="flex items-start gap-4 p-4 rounded-xl border border-white/5 transition-colors hover:border-gold/20"
               style={{ background: 'rgba(255,255,255,0.02)' }}
             >
               <span className="text-xl flex-shrink-0">{c.icon}</span>
@@ -209,7 +209,7 @@ export default function About() {
         </div>
       </div>
 
-      {/* ── 5. NO PALCO (Grade Retrato Perfeita e Alinhada) ── */}
+      {/* ── 5. NO PALCO (Grade Retrato Perfeita e Alinhada com rounded-2xl e shadow profundo) ── */}
       <div className="pb-24 md:pb-32">
         <div className="max-w-7xl mx-auto px-6 md:px-12 mb-8">
           <div className="flex items-center gap-4">
@@ -221,7 +221,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-4">
           
           {/* Card 1: audience-stage.jpg */}
-          <div className="relative overflow-hidden rounded-sm aspect-[3/4] group border border-white/5 shadow-lg">
+          <div className="relative overflow-hidden rounded-2xl aspect-[3/4] group border border-white/5 shadow-[0_15px_30px_rgba(0,0,0,0.55)]">
             <img 
               src="/images/audience-stage.jpg" 
               alt="Plateia e Sebastian no palco" 
@@ -235,7 +235,7 @@ export default function About() {
           </div>
 
           {/* Card 2: stage-5etapas.jpg */}
-          <div className="relative overflow-hidden rounded-sm aspect-[3/4] group border border-white/5 shadow-lg">
+          <div className="relative overflow-hidden rounded-sm aspect-[3/4] group border border-white/5 shadow-[0_15px_30px_rgba(0,0,0,0.55)] rounded-2xl">
             <img 
               src="/images/stage-5etapas.jpg" 
               alt="As 5 etapas do Método Query" 
@@ -249,7 +249,7 @@ export default function About() {
           </div>
 
           {/* Card 3: brain2.jpg */}
-          <div className="relative overflow-hidden rounded-sm aspect-[3/4] group border border-white/5 shadow-lg">
+          <div className="relative overflow-hidden rounded-sm aspect-[3/4] group border border-white/5 shadow-[0_15px_30px_rgba(0,0,0,0.55)] rounded-2xl">
             <img 
               src="/images/brain2.jpg" 
               alt="Neurociência e comportamento humano" 
@@ -263,7 +263,7 @@ export default function About() {
           </div>
 
           {/* Card 4: immersion.jpg */}
-          <div className="relative overflow-hidden rounded-sm aspect-[3/4] group border border-white/5 shadow-lg">
+          <div className="relative overflow-hidden rounded-sm aspect-[3/4] group border border-white/5 shadow-[0_15px_30px_rgba(0,0,0,0.55)] rounded-2xl">
             <img 
               src="/images/immersion.jpg" 
               alt="Imersão emocional profunda" 
