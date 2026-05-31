@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 
-// Component to dynamically remove white background from images with soft edge feathering
+// Component to dynamically remove white background from images using a high-performance Flood Fill algorithm.
+// This only removes the outer background touching the image borders, preserving white clothes/teeth/skin inside.
 function TransparentImage({ src, alt, className }) {
   const [processedSrc, setProcessedSrc] = useState(src)
 
@@ -15,23 +16,147 @@ function TransparentImage({ src, alt, className }) {
       if (!ctx) return
 
       ctx.drawImage(img, 0, 0)
-      const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height)
+      const width = canvas.width
+      const height = canvas.height
+      const imgData = ctx.getImageData(0, 0, width, height)
       const data = imgData.data
 
-      // Loop through all pixels (r, g, b, a)
-      for (let i = 0; i < data.length; i += 4) {
-        const r = data[i]
-        const g = data[i + 1]
-        const b = data[i + 2]
+      // Visited array to keep track of processed pixels
+      const visited = new Uint8Array(width * height)
+      
+      // Flat queues for fast integer coordinates
+      const queueX = new Int32Array(width * height)
+      const queueY = new Int32Array(width * height)
+      let head = 0
+      let tail = 0
+
+      // Helper function to check if a pixel is near-white (background)
+      // We set a lenient threshold of 215 to capture studio backdrops
+      const isWhiteBackground = (x, y) => {
+        const idx = (y * width + x) * 4
+        const r = data[idx]
+        const g = data[idx + 1]
+        const b = data[idx + 2]
+        return r > 215 && g > 215 && b > 215
+      }
+
+      // Add all boundary pixels (edges) to start the flood fill
+      for (let x = 0; x < width; x++) {
+        if (isWhiteBackground(x, 0)) {
+          const idx = x
+          visited[idx] = 1
+          queueX[tail] = x
+          queueY[tail] = 0
+          tail++
+        }
+        if (isWhiteBackground(x, height - 1)) {
+          const idx = (height - 1) * width + x
+          visited[idx] = 1
+          queueX[tail] = x
+          queueY[tail] = height - 1
+          tail++
+        }
+      }
+      for (let y = 1; y < height - 1; y++) {
+        if (isWhiteBackground(0, y)) {
+          const idx = y * width
+          visited[idx] = 1
+          queueX[tail] = 0
+          queueY[tail] = y
+          tail++
+        }
+        if (isWhiteBackground(width - 1, y)) {
+          const idx = y * width + width - 1
+          visited[idx] = 1
+          queueX[tail] = width - 1
+          queueY[tail] = y
+          tail++
+        }
+      }
+
+      // BFS Flood Fill traversal
+      while (head < tail) {
+        const x = queueX[head]
+        const y = queueY[head]
+        head++
+
+        const idx = (y * width + x) * 4
         
-        // Remove white background (R, G, B > 225)
-        if (r > 225 && g > 225 && b > 225) {
-          data[i + 3] = 0 // completely transparent
-        } else if (r > 200 && g > 200 && b > 200) {
-          // Soft edge blending (feathering) to prevent jaggy borders
-          const maxVal = Math.max(r, g, b)
-          const factor = (225 - maxVal) / 25
-          data[i + 3] = Math.round(data[i + 3] * Math.max(0, factor))
+        // Turn the background pixel transparent
+        data[idx + 3] = 0
+
+        // Check 4-connected neighbors
+        // Neighbor 1: Right (x + 1)
+        const nx1 = x + 1
+        const ny1 = y
+        if (nx1 < width) {
+          const nidx = ny1 * width + nx1
+          if (!visited[nidx] && isWhiteBackground(nx1, ny1)) {
+            visited[nidx] = 1
+            queueX[tail] = nx1
+            queueY[tail] = ny1
+            tail++
+          }
+        }
+
+        // Neighbor 2: Left (x - 1)
+        const nx2 = x - 1
+        const ny2 = y
+        if (nx2 >= 0) {
+          const nidx = ny2 * width + nx2
+          if (!visited[nidx] && isWhiteBackground(nx2, ny2)) {
+            visited[nidx] = 1
+            queueX[tail] = nx2
+            queueY[tail] = ny2
+            tail++
+          }
+        }
+
+        // Neighbor 3: Down (y + 1)
+        const nx3 = x
+        const ny3 = y + 1
+        if (ny3 < height) {
+          const nidx = ny3 * width + nx3
+          if (!visited[nidx] && isWhiteBackground(nx3, ny3)) {
+            visited[nidx] = 1
+            queueX[tail] = nx3
+            queueY[tail] = ny3
+            tail++
+          }
+        }
+
+        // Neighbor 4: Up (y - 1)
+        const nx4 = x
+        const ny4 = y - 1
+        if (ny4 >= 0) {
+          const nidx = ny4 * width + nx4
+          if (!visited[nidx] && isWhiteBackground(nx4, ny4)) {
+            visited[nidx] = 1
+            queueX[tail] = nx4
+            queueY[tail] = ny4
+            tail++
+          }
+        }
+      }
+
+      // Apply a very quick 1px boundary smoothing to blend the edges beautifully
+      for (let y = 1; y < height - 1; y++) {
+        for (let x = 1; x < width - 1; x++) {
+          const idx = (y * width + x) * 4
+          
+          // If this pixel is not transparent, check if it's adjacent to a transparent background pixel
+          if (data[idx + 3] > 0) {
+            const hasTransparentNeighbor = 
+              data[((y - 1) * width + x) * 4 + 3] === 0 ||
+              data[((y + 1) * width + x) * 4 + 3] === 0 ||
+              data[(y * width + (x - 1)) * 4 + 3] === 0 ||
+              data[(y * width + (x + 1)) * 4 + 3] === 0
+
+            if (hasTransparentNeighbor) {
+              // Blend the edge pixel slightly for a smooth cutout look
+              data[idx + 3] = 140 
+            }
+          }
         }
       }
 
@@ -141,7 +266,7 @@ export default function About() {
                 na <span className="text-gold font-medium">Europa, América Latina e Brasil</span>.
                 Através dos meus métodos e mentorias, já impactei{' '}
                 <strong className="text-white">milhares de vidas</strong>, ajudando pessoas a
-                reconectar com seu poder mais profundo e restaurar seu equilíbrio emocional genuíno.
+                reconectar com seu poder mais profissional e restaurar seu equilíbrio emocional genuíno.
               </p>
             </div>
 
