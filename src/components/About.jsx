@@ -2,7 +2,7 @@ const impacts = [
   'Superação de bloqueios emocionais profundos',
   'Restauração da autoestima e clareza interior',
   'Alinhamento entre mente, corpo e propósito',
-  'Desbloqueio da força espiritual e prosperidade',
+  'Desbloqueio da força espiritual e propósito',
 ]
 
 const credentials = [
