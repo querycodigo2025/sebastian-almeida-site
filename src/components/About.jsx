@@ -64,11 +64,11 @@ export default function About() {
               </div>
             </div>
 
-            {/* Right side: The Correct Photo (about.jpg - 100% sharp and not cut off, rounded-2xl like Pádua) */}
+            {/* Right side: The Correct Photo (sebastian-padua.jpg - 100% sharp and not cut off, rounded-2xl like Pádua) */}
             <div className="md:col-span-5 h-full flex items-center justify-center md:justify-end relative py-6">
               <div className="relative h-[85%] aspect-square rounded-2xl overflow-hidden border border-gold/30 shadow-[0_20px_50px_rgba(0,0,0,0.85)] z-20">
                 <img
-                  src="/images/about.jpg"
+                  src="/images/sebastian-padua.jpg"
                   alt="Sebastian Almeida retrato de estúdio"
                   className="w-full h-full object-cover"
                 />
