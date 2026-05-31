@@ -103,12 +103,12 @@ export default function Books() {
         </div>
 
         {/* Stage book photo */}
-        <div className="mt-16 relative rounded-sm overflow-hidden max-h-72">
+        <div className="mt-16 relative rounded-sm overflow-hidden" style={{ height: '400px' }}>
           <img
             src="/images/stage-book.jpg"
             alt="Sebastian apresentando no palco"
-            className="w-full h-full object-cover object-center"
-            style={{ maxHeight: '280px' }}
+            className="w-full h-full object-cover"
+            style={{ objectPosition: 'center 10%' }}
           />
           <div className="absolute inset-0"
             style={{ background: 'linear-gradient(to right, rgba(13,13,13,0.8) 0%, rgba(13,13,13,0.3) 50%, rgba(13,13,13,0.8) 100%)' }} />
