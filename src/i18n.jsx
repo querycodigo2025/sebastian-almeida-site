@@ -160,9 +160,9 @@ export const T = {
     'gal.title': 'Experiências que',
     'gal.titleGold': 'Transformam',
     'gal.stage1.title': 'Palco Internacional',
-    'gal.stage1.sub': 'Conferências & Treinamentos de Alto Impacto',
-    'gal.stage2.title': 'Oratória & Liderança',
-    'gal.stage2.sub': 'Treinamento de Alto Impacto e Conexão Humana',
+    'gal.stage1.sub': 'Sebastian Almeida',
+    'gal.stage2.title': 'Palco Internacional',
+    'gal.stage2.sub': 'Conferências & Treinamentos de Alto Impacto',
 
     // TESTIMONIALS
     'test.tag': 'Depoimentos',
@@ -411,9 +411,9 @@ export const T = {
     'gal.title': 'Experiences that',
     'gal.titleGold': 'Transform',
     'gal.stage1.title': 'International Stage',
-    'gal.stage1.sub': 'High-Impact Keynotes & Training',
-    'gal.stage2.title': 'Public Speaking & Leadership',
-    'gal.stage2.sub': 'High-Impact Training & Human Connection',
+    'gal.stage1.sub': 'Sebastian Almeida',
+    'gal.stage2.title': 'International Stage',
+    'gal.stage2.sub': 'High-Impact Keynotes & Training',
 
     // TESTIMONIALS
     'test.tag': 'Testimonials',
@@ -662,9 +662,9 @@ export const T = {
     'gal.title': 'Experiências que',
     'gal.titleGold': 'Transforman',
     'gal.stage1.title': 'Escenario Internacional',
-    'gal.stage1.sub': 'Conferencias y Entrenamientos de Alto Impacto',
-    'gal.stage2.title': 'Oratoria y Liderazgo',
-    'gal.stage2.sub': 'Entrenamiento de Alto Impacto y Conexión Humana',
+    'gal.stage1.sub': 'Sebastian Almeida',
+    'gal.stage2.title': 'Escenario Internacional',
+    'gal.stage2.sub': 'Conferencias y Entrenamientos de Alto Impacto',
 
     // TESTIMONIALS
     'test.tag': 'Testimonios',

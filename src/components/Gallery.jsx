@@ -7,13 +7,13 @@ export default function Gallery() {
 
   const galleryItems = [
     {
-      src: '/images/stage-lovish.jpg',
+      src: '/images/sebastian-padua.jpg',
       alt: t('gal.stage1.title'),
       title: t('gal.stage1.title'),
       subtitle: t('gal.stage1.sub')
     },
     {
-      src: '/images/stage-blue-premium.jpg',
+      src: '/images/stage-lovish.jpg',
       alt: t('gal.stage2.title'),
       title: t('gal.stage2.title'),
       subtitle: t('gal.stage2.sub')
