@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useLanguage, LanguageSwitcher } from '../i18n'
 
 const WHATSAPP_NUMBER = '5511999290121'
 const WHATSAPP_MSG = encodeURIComponent('Olá Sebastian! Gostaria de saber mais sobre suas mentorias e treinamentos.')
@@ -6,6 +7,7 @@ const WHATSAPP_MSG = encodeURIComponent('Olá Sebastian! Gostaria de saber mais 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -14,12 +16,12 @@ export default function Navbar() {
   }, [])
 
   const links = [
-    { label: 'Sobre', href: '#sobre' },
-    { label: 'Livros', href: '#livros' },
-    { label: 'Método Query', href: '#metodo-query' },
-    { label: 'Programas', href: '#programas' },
-    { label: 'Depoimentos', href: '#depoimentos' },
-    { label: 'Contato', href: '#cta' },
+    { label: t('nav.about'), href: '#sobre' },
+    { label: t('nav.books'), href: '#livros' },
+    { label: t('nav.query'), href: '#metodo-query' },
+    { label: t('nav.programs'), href: '#programas' },
+    { label: t('nav.testimonials'), href: '#depoimentos' },
+    { label: t('nav.contact'), href: '#cta' },
   ]
 
   return (
@@ -50,6 +52,7 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
+          <LanguageSwitcher />
           <a
             href="https://www.instagram.com/sebastianalmeidamentor?igsh=Mjhibmp6cHl0OWsy"
             target="_blank"
@@ -67,7 +70,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="btn-gold text-sm py-2.5 px-6"
           >
-            Falar com Sebastian
+            {t('nav.cta')}
           </a>
         </div>
 
@@ -86,6 +89,10 @@ export default function Navbar() {
       {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden bg-dark-DEFAULT/98 backdrop-blur-md border-t border-gold/10 px-6 py-6 flex flex-col gap-5">
+          <div className="flex justify-between items-center pb-2 border-b border-gold/10">
+            <span className="text-xs uppercase tracking-wider text-white/50">Idioma / Language</span>
+            <LanguageSwitcher />
+          </div>
           {links.map((l) => (
             <a
               key={l.href}
@@ -102,7 +109,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="btn-gold text-sm mt-2"
           >
-            Falar com Sebastian
+            {t('nav.cta')}
           </a>
         </div>
       )}

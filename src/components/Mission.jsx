@@ -1,4 +1,26 @@
+import { useLanguage } from '../i18n'
+
 export default function Mission() {
+  const { t } = useLanguage()
+
+  const pillars = [
+    {
+      icon: '🧬',
+      title: t('mission.p1.title'),
+      text: t('mission.p1.desc'),
+    },
+    {
+      icon: '🌀',
+      title: t('mission.p2.title'),
+      text: t('mission.p2.desc'),
+    },
+    {
+      icon: '🔁',
+      title: t('mission.p3.title'),
+      text: t('mission.p3.desc'),
+    },
+  ]
+
   return (
     <section id="missao" className="py-24 md:py-32 relative overflow-hidden">
       {/* Background */}
@@ -22,7 +44,7 @@ export default function Mission() {
           {/* Label */}
           <div className="flex items-center justify-center gap-4">
             <div className="h-px w-12 bg-gold" />
-            <span className="text-gold text-xs uppercase tracking-[0.3em] font-semibold">Missão</span>
+            <span className="text-gold text-xs uppercase tracking-[0.3em] font-semibold">{t('mission.tag')}</span>
             <div className="h-px w-12 bg-gold" />
           </div>
 
@@ -30,10 +52,10 @@ export default function Mission() {
           <div className="relative">
             <span className="absolute -top-8 left-1/2 -translate-x-1/2 font-serif text-8xl text-gold/15 select-none leading-none">"</span>
             <blockquote className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight relative z-10">
-              Minha missão é guiar pessoas ao{' '}
-              <span className="gold-text">reencontro com sua essência</span>{' '}
-              — libertando-as de dores silenciosas e ajudando-as a reconectar seu{' '}
-              <span className="italic text-white/90">poder mais profundo.</span>
+              {t('mission.quote.title')}{' '}
+              <span className="gold-text">{t('mission.quote.gold')}</span>{' '}
+              {t('mission.quote.desc')}{' '}
+              <span className="italic text-white/90">{t('mission.quote.italic')}</span>
             </blockquote>
           </div>
 
@@ -43,23 +65,7 @@ export default function Mission() {
           <div className="section-divider my-10" />
 
           <div className="grid md:grid-cols-3 gap-6 text-center">
-            {[
-              {
-                icon: '🧬',
-                title: 'Neurociência',
-                text: 'Base científica que explica e transforma padrões cerebrais limitantes.',
-              },
-              {
-                icon: '🌀',
-                title: 'Essência',
-                text: 'Reconexão com a essência e o propósito de vida mais profundo.',
-              },
-              {
-                icon: '🔁',
-                title: 'Reprogramação',
-                text: 'Técnicas comprovadas que criam mudanças reais e duradouras.',
-              },
-            ].map((pillar) => (
+            {pillars.map((pillar) => (
               <div key={pillar.title} className="space-y-3">
                 <div className="text-3xl">{pillar.icon}</div>
                 <h3 className="font-serif text-xl font-bold text-gold">{pillar.title}</h3>

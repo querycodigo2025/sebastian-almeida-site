@@ -1,32 +1,36 @@
-const steps = [
-  {
-    letter: 'I',
-    word: 'Identificação',
-    description: 'Mapeamento preciso de traumas, crenças limitantes e padrões que aprisionam o potencial.',
-  },
-  {
-    letter: 'D',
-    word: 'Desconstrução',
-    description: 'Desmontagem dos padrões negativos enraizados no sistema emocional e neurológico.',
-  },
-  {
-    letter: 'E',
-    word: 'Elaboração e Expansão',
-    description: 'Construção ativa do novo eu — ressignificando experiências e ampliando a consciência.',
-  },
-  {
-    letter: 'R',
-    word: 'Reprogramação',
-    description: 'Reconfiguração neuronal profunda, criando novos caminhos cerebrais e comportamentais.',
-  },
-  {
-    letter: 'E',
-    word: 'Estabilização Emocional',
-    description: 'Consolidação das transformações para que os resultados sejam duradouros e sustentáveis.',
-  },
-]
+import { useLanguage } from '../i18n'
 
 export default function MetodoQuery() {
+  const { t } = useLanguage()
+
+  const steps = [
+    {
+      letter: t('mq.s1.letter'),
+      word: t('mq.s1.word'),
+      description: t('mq.s1.desc'),
+    },
+    {
+      letter: t('mq.s2.letter'),
+      word: t('mq.s2.word'),
+      description: t('mq.s2.desc'),
+    },
+    {
+      letter: t('mq.s3.letter'),
+      word: t('mq.s3.word'),
+      description: t('mq.s3.desc'),
+    },
+    {
+      letter: t('mq.s4.letter'),
+      word: t('mq.s4.word'),
+      description: t('mq.s4.desc'),
+    },
+    {
+      letter: t('mq.s5.letter'),
+      word: t('mq.s5.word'),
+      description: t('mq.s5.desc'),
+    },
+  ]
+
   return (
     <section id="metodo-query" className="py-24 md:py-32 relative overflow-hidden">
       {/* Dark purple bg */}
@@ -45,19 +49,16 @@ export default function MetodoQuery() {
             <div>
               <div className="flex items-center gap-4 mb-5">
                 <div className="h-px w-12 bg-gold" />
-                <span className="text-gold text-xs uppercase tracking-[0.3em] font-semibold">Metodologia Exclusiva</span>
+                <span className="text-gold text-xs uppercase tracking-[0.3em] font-semibold">{t('mq.tag')}</span>
               </div>
               <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                O <span className="gold-text">Método Query</span>
+                {t('mq.title')}
               </h2>
               <p className="text-white/70 text-lg leading-relaxed mb-6">
-                Uma metodologia científica e emocional criada após anos de pesquisa
-                sobre o funcionamento do <strong className="text-gold">núcleo accumbens</strong> —
-                o centro cerebral responsável por decisões e emoções.
+                {t('mq.desc1')}
               </p>
               <p className="text-white/70 leading-relaxed">
-                Através de 5 etapas estruturadas (IDERE), o método atua na raiz das
-                limitações emocionais, produzindo transformações reais, mensuráveis e duradouras.
+                {t('mq.desc2')}
               </p>
             </div>
 
@@ -76,8 +77,8 @@ export default function MetodoQuery() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                 </div>
                 <div className="p-3 bg-[#141414]/30 border-t border-white/5 text-center">
-                  <p className="font-serif text-sm md:text-base text-white font-medium">Base Científica</p>
-                  <p className="mt-1 text-[8px] md:text-[9px] font-semibold uppercase tracking-wider text-gold">Accumbens · Amígdala · Córtex</p>
+                  <p className="font-serif text-sm md:text-base text-white font-medium">{t('mq.card1.title')}</p>
+                  <p className="mt-1 text-[8px] md:text-[9px] font-semibold uppercase tracking-wider text-gold">{t('mq.card1.sub')}</p>
                 </div>
               </div>
 
@@ -93,8 +94,8 @@ export default function MetodoQuery() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                 </div>
                 <div className="p-3 bg-[#141414]/30 border-t border-white/5 text-center">
-                  <p className="font-serif text-sm md:text-base text-white font-medium">As 5 Etapas</p>
-                  <p className="mt-1 text-[8px] md:text-[9px] font-semibold uppercase tracking-wider text-gold">Da Cura Emocional</p>
+                  <p className="font-serif text-sm md:text-base text-white font-medium">{t('mq.card2.title')}</p>
+                  <p className="mt-1 text-[8px] md:text-[9px] font-semibold uppercase tracking-wider text-gold">{t('mq.card2.sub')}</p>
                 </div>
               </div>
 
@@ -104,7 +105,7 @@ export default function MetodoQuery() {
           {/* Right: IDERE steps */}
           <div className="space-y-4">
             <p className="text-gold text-xs uppercase tracking-[0.3em] font-semibold mb-8">
-              As 5 Etapas — IDERE
+              {t('mq.steps.tag')}
             </p>
             {steps.map((step, i) => (
               <div
@@ -144,11 +145,10 @@ export default function MetodoQuery() {
               style={{ background: 'rgba(123, 47, 190, 0.10)' }}>
               <div className="flex items-center gap-3 mb-2">
                 <span className="text-xl">👑</span>
-                <h3 className="font-serif text-xl font-bold text-white">Método Protagonista</h3>
+                <h3 className="font-serif text-xl font-bold text-white">{t('mq.pro.title')}</h3>
               </div>
               <p className="text-white/60 text-sm leading-relaxed">
-                Programa avançado de liderança e reconexão com a essência — para quem
-                deseja assumir o protagonismo pleno da própria vida e legado.
+                {t('mq.pro.desc')}
               </p>
             </div>
           </div>

@@ -1,20 +1,32 @@
-const credentials = [
-  { icon: '🎓', text: 'Pós-graduado em Neurociência' },
-  { icon: '🧠', text: 'Especialista em PNL e Psicanálise' },
-  { icon: '🌀', text: 'Especialista em Renascimento (Rebirth)' },
-  { icon: '🌍', text: 'Europa, América Latina e Brasil' },
-  { icon: '✍️', text: 'Autor de 3 livros bestsellers' },
-  { icon: '🎤', text: 'Palestrante e Treinador Internacional' },
-]
-
-const impacts = [
-  'Superação de bloqueios emocionais profundos',
-  'Restauração da autoestima e clareza interior',
-  'Alinhamento entre mente, corpo e propósito',
-  'Desbloqueio da força espiritual e propósito',
-]
+import { useLanguage } from '../i18n'
 
 export default function About() {
+  const { t } = useLanguage()
+
+  const credentials = [
+    { icon: '🎓', text: t('cred.1') },
+    { icon: '🧠', text: t('cred.2') },
+    { icon: '🌀', text: t('cred.3') },
+    { icon: '🌍', text: t('cred.4') },
+    { icon: '✍️', text: t('cred.5') },
+    { icon: '🎤', text: t('cred.6') },
+  ]
+
+  const impacts = [
+    t('about.help1'),
+    t('about.help2'),
+    t('about.help3'),
+    t('about.help4'),
+  ]
+
+  const tags = [
+    t('about.tag.neuro'),
+    t('about.tag.psy'),
+    t('about.tag.pnl'),
+    t('about.tag.reprog'),
+    t('about.tag.rebirth')
+  ]
+
   return (
     <section 
       id="sobre" 
@@ -46,16 +58,16 @@ export default function About() {
             <div className="md:col-span-7 space-y-6 pt-10 md:pt-0">
               <div className="flex items-center gap-3">
                 <div className="h-px w-10 bg-gold" />
-                <span className="text-gold text-xs uppercase tracking-[0.3em] font-semibold">Sobre Mim</span>
+                <span className="text-gold text-xs uppercase tracking-[0.3em] font-semibold">{t('about.tag')}</span>
               </div>
               
               <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Uma vida dedicada à <br />
-                <span className="gold-text">transformação humana</span>
+                {t('about.title')} <br />
+                <span className="gold-text">{t('about.titleGold')}</span>
               </h2>
 
               <div className="flex flex-wrap gap-2 pt-2">
-                {['Neurociência', 'Psicanálise', 'PNL', 'Reprogramação Emocional', 'Renascimento'].map(tag => (
+                {tags.map(tag => (
                   <span key={tag}
                     className="text-[10px] md:text-xs border border-gold/30 text-gold/80 px-3 py-1 rounded-sm backdrop-blur-sm bg-dark-DEFAULT/40">
                     {tag}
@@ -100,24 +112,18 @@ export default function About() {
             </div>
 
             <p className="text-white/85 text-xl md:text-2xl leading-relaxed font-light">
-              Sou <strong className="text-white font-semibold">Sebastian Almeida</strong>, formado em
-              Administração e Comércio Exterior, com pós-graduação em Neurociência e
-              especialista em Renascimento (Rebirth), Programação Neurolinguística e Psicanálise.
+              {t('about.bio1')}
             </p>
             
             <p className="text-white/65 text-lg leading-relaxed">
-              Atuo como mentor, escritor, treinador e palestrante internacional, com vivências
-              na <span className="text-gold font-medium">Europa, América Latina e Brasil</span>.
-              Através dos meus métodos e mentorias, já impactei{' '}
-              <strong className="text-white">milhares de vidas</strong>, ajudando pessoas a
-              reconectar com seu poder mais profundo e restaurar seu equilíbrio emocional genuíno.
+              {t('about.bio2')}
             </p>
 
             <div className="h-px w-24 bg-gradient-to-r from-gold to-transparent pt-2" />
 
             <div className="space-y-4 pt-4">
               <p className="text-gold text-xs uppercase tracking-widest font-semibold">
-                Ajudo pessoas a:
+                {t('about.help')}
               </p>
               <ul className="space-y-3">
                 {impacts.map(item => (
@@ -132,12 +138,12 @@ export default function About() {
 
           {/* Side stats card to balance the grid layout */}
           <div className="lg:col-span-4 p-6 rounded-2xl border border-white/5 bg-[#141414]/60 space-y-6 lg:mt-2">
-            <h3 className="font-serif text-xl font-bold text-white border-b border-white/5 pb-3">Destaques Rápidos</h3>
+            <h3 className="font-serif text-xl font-bold text-white border-b border-white/5 pb-3">{t('about.highlights')}</h3>
             <div className="space-y-4">
               {[
-                { title: 'Treinamento de Impacto', value: 'Método Query' },
-                { title: 'Obras Publicadas', value: '3 Livros Bestsellers' },
-                { title: 'Presença e Legado', value: 'Europa & América Latina' }
+                { title: t('about.hl.query'), value: t('about.hl.query.val') },
+                { title: t('about.hl.books'), value: t('about.hl.books.val') },
+                { title: t('about.hl.presence'), value: t('about.hl.presence.val') }
               ].map(stat => (
                 <div key={stat.title}>
                   <p className="text-white/40 text-xs uppercase tracking-wider">{stat.title}</p>
@@ -164,9 +170,9 @@ export default function About() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-dark-DEFAULT/95 via-dark-DEFAULT/30 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 z-10">
-              <p className="text-gold text-xs uppercase tracking-widest font-semibold mb-1">Query in Company</p>
+              <p className="text-gold text-xs uppercase tracking-widest font-semibold mb-1">{t('about.events.tag')}</p>
               <p className="text-white font-serif text-xl md:text-2xl font-bold leading-tight">
-                Treinamento corporativo com público lotado
+                {t('about.events.title')}
               </p>
             </div>
           </div>
@@ -181,9 +187,9 @@ export default function About() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-dark-DEFAULT/95 via-dark-DEFAULT/30 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 z-10">
-              <p className="text-gold text-xs uppercase tracking-widest font-semibold mb-1">Ao Vivo</p>
+              <p className="text-gold text-xs uppercase tracking-widest font-semibold mb-1">{t('about.live.tag')}</p>
               <p className="text-white font-serif text-xl md:text-2xl font-bold leading-tight">
-                Estriado — Onde o Novo Vira Automático
+                {t('about.live.title')}
               </p>
             </div>
           </div>
@@ -194,7 +200,7 @@ export default function About() {
       {/* ── 4. FORMAÇÃO & ATUAÇÃO ── */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 pb-24">
         <p className="text-gold text-xs uppercase tracking-widest font-semibold mb-6">
-          Formação &amp; Atuação
+          {t('about.tag')} &amp; {t('nav.programs')}
         </p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {credentials.map(c => (
@@ -215,7 +221,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 mb-8">
           <div className="flex items-center gap-4">
             <div className="h-px w-10 bg-gold" />
-            <span className="text-gold text-xs uppercase tracking-[0.3em] font-semibold">No Palco</span>
+            <span className="text-gold text-xs uppercase tracking-[0.3em] font-semibold">{t('about.stage')}</span>
           </div>
         </div>
 
@@ -233,8 +239,8 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D]/70 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
             </div>
             <div className="p-4 bg-[#141414]/30 border-t border-white/5 text-center">
-              <p className="font-serif text-base md:text-lg text-white">Estriado</p>
-              <p className="mt-1 text-[9px] md:text-[10px] font-semibold uppercase tracking-wider text-gold">Onde o Novo Vira Automático</p>
+              <p className="font-serif text-base md:text-lg text-white">{t('about.stage1.title')}</p>
+              <p className="mt-1 text-[9px] md:text-[10px] font-semibold uppercase tracking-wider text-gold">{t('about.stage1.sub')}</p>
             </div>
           </div>
 
@@ -250,8 +256,8 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D]/70 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
             </div>
             <div className="p-4 bg-[#141414]/30 border-t border-white/5 text-center">
-              <p className="font-serif text-base md:text-lg text-white">Método Query</p>
-              <p className="mt-1 text-[9px] md:text-[10px] font-semibold uppercase tracking-wider text-gold">As 5 Etapas do Desbloqueio</p>
+              <p className="font-serif text-base md:text-lg text-white">{t('about.stage2.title')}</p>
+              <p className="mt-1 text-[9px] md:text-[10px] font-semibold uppercase tracking-wider text-gold">{t('about.stage2.sub')}</p>
             </div>
           </div>
 
@@ -267,8 +273,8 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D]/70 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
             </div>
             <div className="p-4 bg-[#141414]/30 border-t border-white/5 text-center">
-              <p className="font-serif text-base md:text-lg text-white">Neurociência</p>
-              <p className="mt-1 text-[9px] md:text-[10px] font-semibold uppercase tracking-wider text-gold">Prática Aplicada ao Sucesso</p>
+              <p className="font-serif text-base md:text-lg text-white">{t('about.stage3.title')}</p>
+              <p className="mt-1 text-[9px] md:text-[10px] font-semibold uppercase tracking-wider text-gold">{t('about.stage3.sub')}</p>
             </div>
           </div>
 
@@ -284,11 +290,10 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D]/70 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
             </div>
             <div className="p-4 bg-[#141414]/30 border-t border-white/5 text-center">
-              <p className="font-serif text-base md:text-lg text-white">Águia de Fogo</p>
-              <p className="mt-1 text-[9px] md:text-[10px] font-semibold uppercase tracking-wider text-gold">Imersão Emocional Profunda</p>
+              <p className="font-serif text-base md:text-lg text-white">{t('about.stage4.title')}</p>
+              <p className="mt-1 text-[9px] md:text-[10px] font-semibold uppercase tracking-wider text-gold">{t('about.stage4.sub')}</p>
             </div>
           </div>
-
         </div>
       </div>
 

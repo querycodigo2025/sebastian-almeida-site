@@ -1,31 +1,32 @@
-const books = [
-  {
-    title: 'Cicatrização Emocional',
-    cover: '/images/book-cicatrizacao.jpg',
-    description:
-      'Uma jornada de cura profunda que guia o leitor pelo processo de restauração emocional, ajudando a superar dores do passado e reconectar-se com a própria essência.',
-    themes: ['Cura Emocional', 'Autoconhecimento', 'Resiliência'],
-    highlight: 'Bestseller',
-  },
-  {
-    title: 'Golpista Emocional',
-    cover: '/images/book-golpista.jpg',
-    description:
-      'Revela os padrões ocultos de manipulação emocional e ensina como identificar, se proteger e se libertar de relacionamentos tóxicos que drenam energia e autoestima.',
-    themes: ['Relacionamentos', 'Autoproteção', 'Libertação'],
-    highlight: 'Bestseller',
-  },
-  {
-    title: 'Depressão Espiritual',
-    cover: null,
-    description:
-      'Uma abordagem pioneira que une neurociência e espiritualidade para compreender e superar o vazio existencial, reconectando o ser humano ao seu propósito mais profundo.',
-    themes: ['Espiritualidade', 'Propósito', 'Neurociência'],
-    highlight: 'Lançamento',
-  },
-]
+import { useLanguage } from '../i18n'
 
 export default function Books() {
+  const { t } = useLanguage()
+
+  const books = [
+    {
+      title: t('books.b1.title'),
+      cover: '/images/book-cicatrizacao.jpg',
+      description: t('books.b1.desc'),
+      themes: [t('books.b1.theme1'), t('books.b1.theme2'), t('books.b1.theme3')],
+      highlight: t('books.highlight.bestseller'),
+    },
+    {
+      title: t('books.b2.title'),
+      cover: '/images/book-golpista.jpg',
+      description: t('books.b2.desc'),
+      themes: [t('books.b2.theme1'), t('books.b2.theme2'), t('books.b2.theme3')],
+      highlight: t('books.highlight.bestseller'),
+    },
+    {
+      title: t('books.b3.title'),
+      cover: null,
+      description: t('books.b3.desc'),
+      themes: [t('books.b3.theme1'), t('books.b3.theme2'), t('books.b3.theme3')],
+      highlight: t('books.highlight.new'),
+    },
+  ]
+
   return (
     <section id="livros" className="py-24 md:py-32 relative">
       <div className="absolute inset-0 pointer-events-none"
@@ -35,14 +36,14 @@ export default function Books() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-5">
             <div className="h-px w-12 bg-gold" />
-            <span className="text-gold text-xs uppercase tracking-[0.3em] font-semibold">Obras</span>
+            <span className="text-gold text-xs uppercase tracking-[0.3em] font-semibold">{t('nav.books')}</span>
             <div className="h-px w-12 bg-gold" />
           </div>
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
-            Livros que <span className="gold-text">Transformam Vidas</span>
+            {t('books.title')}
           </h2>
           <p className="text-white/60 max-w-xl mx-auto text-lg">
-            Obras que já mudaram a perspectiva de milhares de leitores pelo Brasil e pelo mundo.
+            {t('books.desc')}
           </p>
         </div>
 
@@ -118,13 +119,13 @@ export default function Books() {
             <div className="h-px w-16 mb-6"
               style={{ background: 'linear-gradient(90deg, transparent, #C9A96E, transparent)' }} />
             <p className="text-gold text-xs uppercase tracking-[0.3em] font-semibold mb-3">
-              Autor &amp; Palestrante
+              {t('books.banner.tag')}
             </p>
             <p className="font-serif text-4xl md:text-5xl text-white font-bold mb-4 leading-tight">
-              Conhecimento que liberta
+              {t('books.banner.title')}
             </p>
             <p className="text-white/60 max-w-md text-base">
-              Obras que já transformaram milhares de leitores pelo Brasil e pelo mundo.
+              {t('books.banner.desc')}
             </p>
             <div className="h-px w-16 mt-6"
               style={{ background: 'linear-gradient(90deg, transparent, #C9A96E, transparent)' }} />

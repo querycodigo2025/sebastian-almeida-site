@@ -1,64 +1,66 @@
 import { useState, useEffect } from 'react'
-
-const galleryItems = [
-  {
-    src: '/images/event-large.jpg',
-    alt: 'Grande evento corporativo com público lotado',
-    title: 'Query in Company',
-    subtitle: 'Neurociência para Líderes & Equipes'
-  },
-  {
-    src: '/images/audience-stage.jpg',
-    alt: 'Plateia acompanhando Sebastian no palco',
-    title: 'Estriado ao Vivo',
-    subtitle: 'Workshop de Alto Impacto'
-  },
-  {
-    src: '/images/brain2.jpg',
-    alt: 'Sebastian explicando neurociência para o público',
-    title: 'Onde Mora Cada Emoção?',
-    subtitle: 'Mapeamento Cerebral e Prático'
-  },
-  {
-    src: '/images/workshop-audience.jpg',
-    alt: 'Plateia no workshop',
-    title: 'Workshop Reconexão',
-    subtitle: 'Reconexão Emocional Profunda'
-  },
-  {
-    src: '/images/immersion.jpg',
-    alt: 'Imersão emocional — participantes nos tapetes roxos',
-    title: 'Águia de Fogo',
-    subtitle: 'Imersão de Renascimento'
-  },
-  {
-    src: '/images/workshop-group.jpg',
-    alt: 'Foto em grupo após workshop',
-    title: 'Mentoria em Grupo',
-    subtitle: 'Cicatrização Emocional'
-  },
-  {
-    src: '/images/audience-estriado.jpg',
-    alt: 'Plateia no treinamento — Sebastian no palco',
-    title: 'Treinamento de Alto Impacto',
-    subtitle: 'Neurobiologia de Hábitos'
-  },
-  {
-    src: '/images/stage-5etapas.jpg',
-    alt: 'Sebastian no palco — As 5 Etapas da Cura Emocional',
-    title: 'As 5 Etapas da Cura Emocional',
-    subtitle: 'Método Query Prático'
-  },
-  {
-    src: '/images/stage-blue-premium.jpg',
-    alt: 'Sebastian palestrando no palco com iluminação azul',
-    title: 'Palco Internacional',
-    subtitle: 'Europa & América Latina'
-  }
-]
+import { useLanguage } from '../i18n'
 
 export default function Gallery() {
   const [activeIdx, setActiveIdx] = useState(null)
+  const { t } = useLanguage()
+
+  const galleryItems = [
+    {
+      src: '/images/event-large.jpg',
+      alt: t('gal.item1.title'),
+      title: t('gal.item1.title'),
+      subtitle: t('gal.item1.sub')
+    },
+    {
+      src: '/images/audience-stage.jpg',
+      alt: t('gal.item2.title'),
+      title: t('gal.item2.title'),
+      subtitle: t('gal.item2.sub')
+    },
+    {
+      src: '/images/brain2.jpg',
+      alt: t('gal.item3.title'),
+      title: t('gal.item3.title'),
+      subtitle: t('gal.item3.sub')
+    },
+    {
+      src: '/images/workshop-audience.jpg',
+      alt: t('gal.item4.title'),
+      title: t('gal.item4.title'),
+      subtitle: t('gal.item4.sub')
+    },
+    {
+      src: '/images/immersion.jpg',
+      alt: t('gal.item5.title'),
+      title: t('gal.item5.title'),
+      subtitle: t('gal.item5.sub')
+    },
+    {
+      src: '/images/workshop-group.jpg',
+      alt: t('gal.item6.title'),
+      title: t('gal.item6.title'),
+      subtitle: t('gal.item6.sub')
+    },
+    {
+      src: '/images/audience-estriado.jpg',
+      alt: t('gal.item7.title'),
+      title: t('gal.item7.title'),
+      subtitle: t('gal.item7.sub')
+    },
+    {
+      src: '/images/stage-5etapas.jpg',
+      alt: t('gal.item8.title'),
+      title: t('gal.item8.title'),
+      subtitle: t('gal.item8.sub')
+    },
+    {
+      src: '/images/stage-blue-premium.jpg',
+      alt: t('gal.item9.title'),
+      title: t('gal.item9.title'),
+      subtitle: t('gal.item9.sub')
+    }
+  ]
 
   // Keyboard navigation for Lightbox
   useEffect(() => {
@@ -105,10 +107,10 @@ export default function Gallery() {
         {/* Header (Pádua Style: Clean & Centralized) */}
         <div className="text-center mb-16">
           <p className="text-gold text-xs uppercase tracking-[0.25em] font-semibold mb-3">
-            Galeria &amp; Imersões
+            {t('gal.tag')}
           </p>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-white leading-tight">
-            Experiências que <span className="gold-text">Transformam</span>
+            {t('gal.title')} <span className="gold-text">{t('gal.titleGold')}</span>
           </h2>
           <div className="h-0.5 w-16 bg-gold mx-auto mt-5 opacity-70" />
         </div>
