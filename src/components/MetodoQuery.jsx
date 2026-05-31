@@ -61,35 +61,43 @@ export default function MetodoQuery() {
               </p>
             </div>
 
-            {/* Brain photo */}
-            <div className="relative rounded-sm overflow-hidden h-52">
-              <img
-                src="/images/brain.jpg"
-                alt="Sebastian explicando o funcionamento do cérebro"
-                className="w-full h-full object-cover"
-                style={{ objectPosition: 'center 30%' }}
-              />
-              <div className="absolute inset-0"
-                style={{ background: 'linear-gradient(to top, rgba(13,13,13,0.7), transparent 60%)' }} />
-              <div className="absolute bottom-4 left-4">
-                <p className="text-gold text-xs uppercase tracking-widest font-semibold">Base científica</p>
-                <p className="text-white font-serif text-base">Núcleo Accumbens · Amígdala · Córtex Pré-Frontal</p>
+            {/* 2-Column Grid of Premium Structured Cards to prevent facial distortion */}
+            <div className="grid grid-cols-2 gap-4">
+              
+              {/* Card 1: brain.jpg */}
+              <div className="group overflow-hidden rounded-2xl border border-white/5 bg-[#141414]/50 shadow-[0_15px_30px_rgba(0,0,0,0.7)] transition-all duration-300 hover:-translate-y-2 hover:border-gold/30">
+                <div className="relative aspect-[3/4] overflow-hidden bg-black">
+                  <img
+                    src="/images/brain.jpg"
+                    alt="Sebastian explicando o funcionamento do cérebro"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    style={{ objectPosition: 'center 20%' }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                </div>
+                <div className="p-3 bg-[#141414]/30 border-t border-white/5 text-center">
+                  <p className="font-serif text-sm md:text-base text-white font-medium">Base Científica</p>
+                  <p className="mt-1 text-[8px] md:text-[9px] font-semibold uppercase tracking-wider text-gold">Accumbens · Amígdala · Córtex</p>
+                </div>
               </div>
-            </div>
 
-            {/* Stage photo */}
-            <div className="relative rounded-sm overflow-hidden h-48">
-              <img
-                src="/images/stage-5etapas.jpg"
-                alt="Sebastian apresentando as 5 etapas do Método Query"
-                className="w-full h-full object-cover"
-                style={{ objectPosition: 'center 18%' }}
-              />
-              <div className="absolute inset-0"
-                style={{ background: 'linear-gradient(to right, rgba(13,13,13,0.75), transparent 60%)' }} />
-              <div className="absolute left-4 top-1/2 -translate-y-1/2">
-                <p className="text-gold font-serif text-xl font-bold">"As 5 Etapas<br/>da Cura Emocional"</p>
+              {/* Card 2: stage-5etapas.jpg */}
+              <div className="group overflow-hidden rounded-2xl border border-white/5 bg-[#141414]/50 shadow-[0_15px_30px_rgba(0,0,0,0.7)] transition-all duration-300 hover:-translate-y-2 hover:border-gold/30">
+                <div className="relative aspect-[3/4] overflow-hidden bg-black">
+                  <img
+                    src="/images/stage-5etapas.jpg"
+                    alt="Sebastian apresentando as 5 etapas do Método Query"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    style={{ objectPosition: 'center 20%' }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                </div>
+                <div className="p-3 bg-[#141414]/30 border-t border-white/5 text-center">
+                  <p className="font-serif text-sm md:text-base text-white font-medium">As 5 Etapas</p>
+                  <p className="mt-1 text-[8px] md:text-[9px] font-semibold uppercase tracking-wider text-gold">Da Cura Emocional</p>
+                </div>
               </div>
+
             </div>
           </div>
 
